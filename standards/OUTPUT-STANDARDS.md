@@ -109,3 +109,6 @@ it, a prior run that failed or was interrupted, a change in the criteria or
 schema itself since the prior run, or a prior output that can't be parsed.
 
 ## Rule O5 — A real decision point uses a real gate
+
+A written question in a skill's visible output is never a pause by itself.
+Every point where more work might follow is one of exactly two kinds:
