@@ -58,3 +58,11 @@ entry is uppercase-with-underscores (matching what `diligence-memo`'s
 mechanical verdict check expects).
 
 ### `originate run <stage>`
+
+Dispatches the named stage's rendered skill via whichever runtime
+`agentRuntime.primary` names (Claude Code or Codex), inheriting the
+point-of-use permission gating and checkpointing behavior specified in
+`docs/ARCHITECTURE.md` §3. This is the actual execution engine and is the
+single largest piece of work deferred past this scaffold — it's also where
+the Codex adapter layer (§6 of `ARCHITECTURE.md`) has to exist for any
+connector whose `codexAdapterStatus` is `not-yet-ported`.
