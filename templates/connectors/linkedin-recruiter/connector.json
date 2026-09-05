@@ -1,0 +1,13 @@
+{
+  "id": "linkedin-recruiter",
+  "displayName": "LinkedIn Recruiter",
+  "roles": ["discovery"],
+  "capabilities": { "discovery": true, "enrichment": false, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "api-key",
+    "notes": "No native Claude.ai/Codex connector as of this scaffold -- stored as a tenant-scoped API/session token in the local config store, checked at point of need."
+  },
+  "requiredScopes": ["linkedin:recruiter-search"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Candidate sourcing for the recruiting vertical. See docs/CONNECTOR-CATALOG.md's note on Topwater's existing ATS collectors (atsGreenhouseCollector.ts, atsLeverCollector.ts, atsAshbyCollector.ts, atsLoxoCollector.ts, atsCareerspageCollector.ts) as a directly reusable, already-tested source of the same discovery role, distinct from this connector."
+}
