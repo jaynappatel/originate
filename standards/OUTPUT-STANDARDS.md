@@ -112,3 +112,14 @@ schema itself since the prior run, or a prior output that can't be parsed.
 
 A written question in a skill's visible output is never a pause by itself.
 Every point where more work might follow is one of exactly two kinds:
+
+- **An autonomous continuation** — the skill's own design says to keep
+  going on its own (another search wave, another batch). State what you're
+  about to do, in past or present tense, never as a question dressed up to
+  look optional when it isn't.
+- **A real human gate** — the skill's own design genuinely cannot proceed
+  without a person's decision (Stage A's approval-before-downstream-work
+  gate is the canonical example). Here the pause must be real: invoke an
+  actual interactive mechanism and stop until it returns. Writing the
+  question as plain response text and proceeding regardless is not a gate;
+  it's decoration that looks like one.
