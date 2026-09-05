@@ -77,3 +77,5 @@ underlying connector code is exactly "pull a list of people/postings from
 this ATS," which is the recruiting vertical's Stage B. Worth flagging as a
 concrete, low-risk port when the execution engine is actually built,
 because the code already exists and is already tested.
+
+## Adding a new connector
