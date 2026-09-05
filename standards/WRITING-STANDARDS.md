@@ -88,3 +88,6 @@ last slots carry the weight. Tables may bold headers.
 scheme per document.
 
 ## Synthesis rules
+
+**W15. Quote upstream once.** A synthesis document may reuse a distinctive
+upstream phrase once; a coined phrase never appears twice in one document.
