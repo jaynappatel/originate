@@ -101,3 +101,6 @@ Tests the platform against a domain with almost no natural-language
   a contract-notice deadline).
 
 ## 5. Corporate Development / M&A
+
+Nearly a direct re-skin of the VC/PE diligence pipeline with a different
+Stage A driver and CRM.
