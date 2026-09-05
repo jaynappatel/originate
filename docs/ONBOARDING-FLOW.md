@@ -78,3 +78,10 @@ matching Topwater's proven O1-O5 output-standards layout (see
 `standards/OUTPUT-STANDARDS.md`).
 
 ## 6. Dry-run
+
+Before trusting the instance with a real batch, run Stage A (thesis/
+category) and a small Stage B (discovery) sample — a handful of entities,
+not the full universe — so the company sees real, tailored output before
+committing spend. This surfaces config mistakes (a tier threshold that's
+clearly wrong for this market, a connector returning fields the criteria
+don't reference) while they're still cheap to fix.
