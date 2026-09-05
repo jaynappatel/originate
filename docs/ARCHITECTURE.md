@@ -36,3 +36,5 @@ replaced by a template system (§5) that renders a tenant's actual
 because it's the one we have a fully worked, production example of; the
 platform is designed against seven archetypes so that "VC-only" assumptions
 get caught now rather than when the second customer signs up.
+
+---
