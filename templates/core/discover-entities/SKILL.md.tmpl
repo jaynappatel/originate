@@ -51,3 +51,14 @@ scoring stage, not a human-facing deliverable
 (`standards/OUTPUT-STANDARDS.md` still requires an O2 PDF companion:
 render a short readable summary of the pull — count found, sources used,
 any connector errors — and PDF that).
+
+```json
+{
+  "{{pipeline.stageA.unitNoun|| "category"}}": "",
+  "pulled_at": "",
+  "sources": ["{{connectors.discovery}}"],
+  "{{vocabulary.entityPlural}}": [
+    { "name": "", "identifier": "", "source": "" }
+  ]
+}
+```
