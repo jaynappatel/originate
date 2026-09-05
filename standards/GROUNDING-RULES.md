@@ -62,3 +62,18 @@ instrument, the instrument wins and the conflict is flagged.
 rate has row-level data available, decompose it and report the distribution
 (outliers, share below threshold, ex-outlier figure) — lead with the
 distribution when it tells a different story than the headline.
+
+**G10 — Restating carries the scope, direction, and tense forward; never
+widen any of them.** When prose or a visual restates a number, comparison,
+or reconciliation an upstream specialist already computed, re-read that
+specialist's own field or note before writing the sentence — never restate
+from memory of the finding. Preserve its exact scope, its exact direction
+(the same discipline G2 applies to grew/declined applies here to
+overstates/understates and every other paired directional term), its exact
+tense (a hedged, forward-looking claim must not be presented as already
+true), and any caveat the source attaches to the figure. An inferred
+analytical construct built on top of raw data must say so explicitly and
+never be presented with the same confidence as a directly extracted field.
+When two passages in the same deliverable state the same fact, they must
+trace to the identical computed value, never two independent computations
+that were never cross-checked against each other.
