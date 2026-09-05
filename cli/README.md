@@ -68,3 +68,8 @@ the Codex adapter layer (§6 of `ARCHITECTURE.md`) has to exist for any
 connector whose `codexAdapterStatus` is `not-yet-ported`.
 
 ## What this spec deliberately does not decide
+
+Whether the renderer is a Node script, a Python script, or built into a
+future Electron shell's main process — that's an implementation choice for
+whoever picks this up, not a platform-level decision this scaffold needs to
+lock in.
