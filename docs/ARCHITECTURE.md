@@ -141,3 +141,5 @@ Annotated walkthrough: `docs/CONFIG-SCHEMA.md`. Shape:
   "agentRuntime": { "primary": "claude-code | codex", "skillEditing": "claude-code | codex | both" }
 }
 ```
+
+### Why `criteria` is a small predicate DSL, not code
