@@ -15,3 +15,8 @@ splices holding an overloaded clause together, and removing them forces a
 real sentence.
 
 ## Sentence rules
+
+**W1. Two-value cap.** A sentence carries at most two numeric values and
+the relationship between them. Three or more values go into a table or get
+split into separate sentences that each state one relationship. Arrow
+chains and slash chains never appear in prose.
