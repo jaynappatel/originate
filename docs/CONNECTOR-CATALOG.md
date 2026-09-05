@@ -79,3 +79,14 @@ concrete, low-risk port when the execution engine is actually built,
 because the code already exists and is already tested.
 
 ## Adding a new connector
+
+A new connector must ship both files before it can be referenced from any
+tenant's `connectors` block: `connector.json` (validated against the
+capability-flag vocabulary above — no new flags without a platform-level
+design decision, especially not anything that would let `comms` send) and
+`prompt-fragment.md` (the operational discipline a skill needs — rate
+limits, minimum-field rules, caching windows). A connector with only a
+`connector.json` and no prompt fragment is not onboarding-ready: the
+onboarding wizard's connector-selection step (`docs/ONBOARDING-FLOW.md`
+§4) reads both to explain the connector to the company and to generate the
+credential-setup instructions.
