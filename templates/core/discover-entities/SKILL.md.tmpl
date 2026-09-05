@@ -16,3 +16,10 @@ again; only {{vocabulary.entityPlural}} neither the cached connector pull
 nor a prior web sweep found are new.
 
 ## Caching (independent of O4 — this is about paid-call cost, not staleness)
+
+Before any new call to a `discovery` connector
+({{connectors.discovery}}), check for a cached result from the last 30
+days for this exact {{pipeline.stageA.unitNoun|| "category"}}. If one
+exists, use it instead of pulling again. This window is unrelated to
+whether the answer is "still good" (O4 has no age limit for that) — it
+exists purely to avoid paying for the same pull twice inside a month.
