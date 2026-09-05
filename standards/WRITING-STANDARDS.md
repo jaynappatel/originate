@@ -72,3 +72,8 @@ extraction-history notes live in a header block, not in body prose. Body
 prose states current truth only.
 
 ## Formatting rules
+
+**W12. Number and date house style.** Pick one decimal precision and one
+range style per document and keep it; replace "~" with "about" or
+"roughly"; write dates out in prose, ISO dates only in headers/tables/
+filenames.
