@@ -118,3 +118,5 @@ Stage A driver and CRM.
   frequently with an added "integration risk" specialist that doesn't exist
   in the VC vertical at all — a clean example of a vertical *adding* a
   specialist rather than just reparametrizing the existing eight.
+
+## 6. Sales / BDR Agency (ICP-driven outbound)
