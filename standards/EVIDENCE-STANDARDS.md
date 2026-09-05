@@ -63,3 +63,11 @@ Tag every number, risk flag, and summary finding — never general contextual
 statements.
 
 ### Rule 5 — Two-layer separation
+
+Extraction and interpretation are separate artifacts, never blended.
+Extraction is raw facts with citations, no editorial. Interpretation is
+what the extracted facts mean for a decision — risk flags, judgment,
+recommendation. In practice: produce a structured extraction output first,
+then a plain-English interpretation section below it, so a reviewer who
+wants to check a number reads the extraction layer, and one who wants the
+analyst's read reads the interpretation layer.
