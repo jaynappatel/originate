@@ -43,3 +43,6 @@ pipeline shape:
   in the vertical overlay, not the shared grounding rules.
 
 ## 3. Executive Search / Recruiting
+
+The archetype that most tests whether "company" as the hardcoded entity
+noun actually generalizes.
