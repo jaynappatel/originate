@@ -163,3 +163,5 @@ single-tenant Topwater — and it keeps the DSL intentionally narrow
 functions) specifically so it doesn't reopen the scope that was rejected.
 
 ---
+
+## 5. Skill templates
