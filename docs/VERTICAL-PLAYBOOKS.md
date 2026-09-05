@@ -41,3 +41,5 @@ pipeline shape:
 - **Diligence:** same 8-specialist shape; the fit scorecard and re-rate
   thesis (see `standards/EVIDENCE-STANDARDS.md`) are PE/VC-specific and live
   in the vertical overlay, not the shared grounding rules.
+
+## 3. Executive Search / Recruiting
