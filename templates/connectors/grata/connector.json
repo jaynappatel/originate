@@ -1,0 +1,13 @@
+{
+  "id": "grata",
+  "displayName": "Grata",
+  "roles": ["discovery"],
+  "capabilities": { "discovery": true, "enrichment": false, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "native-mcp",
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today -- no separate credential stored by Originate itself."
+  },
+  "requiredScopes": ["grata:search", "grata:company-read"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Company search/pull for the VC and PE verticals. See prompt-fragment.md for the minimum-field discipline this connector must follow."
+}
