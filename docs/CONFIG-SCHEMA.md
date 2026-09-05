@@ -73,3 +73,5 @@ small. Four parts:
   specified value: `"null-and-flag"` — never guess, never screen out for a
   missing field, set null and flag it, generalizing Topwater's CLAUDE.md
   rule verbatim).
+
+## `connectors`
