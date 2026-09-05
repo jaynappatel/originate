@@ -35,3 +35,5 @@ them is the likely mistake:
   choosing Codex as primary should see, connector by connector, which of
   their chosen connectors actually work today versus which are "not yet
   ported."
+
+## 3. Guided criteria interview
