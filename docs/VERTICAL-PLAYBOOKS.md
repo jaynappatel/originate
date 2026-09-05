@@ -99,3 +99,5 @@ Tests the platform against a domain with almost no natural-language
   ending in a go/no-go memo. The grounding rules generalize directly (date
   arithmetic in code applies just as much to a lease-expiry calculation as
   a contract-notice deadline).
+
+## 5. Corporate Development / M&A
