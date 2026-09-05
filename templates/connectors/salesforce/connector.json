@@ -1,0 +1,13 @@
+{
+  "id": "salesforce",
+  "displayName": "Salesforce",
+  "roles": ["crm"],
+  "capabilities": { "discovery": false, "enrichment": false, "crmRead": true, "crmWrite": true, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "api-key",
+    "notes": "No native Claude.ai/Codex connector as of this scaffold -- stored as a tenant-scoped OAuth token in the local config store, checked at point of need per docs/ONBOARDING-FLOW.md step 4."
+  },
+  "requiredScopes": ["salesforce:object-read", "salesforce:object-write"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Generic CRM check/write-back in place of Affinity, used by the sales-agency, recruiting, and corp-dev verticals -- field mapping is tenant-specific and must be finalized before crmWrite is used, same discipline as templates/connectors/affinity/."
+}
