@@ -1,0 +1,13 @@
+{
+  "id": "gmail",
+  "displayName": "Gmail",
+  "roles": ["comms"],
+  "capabilities": { "discovery": false, "enrichment": false, "crmRead": false, "crmWrite": false, "commsDraft": true, "docs": false },
+  "auth": {
+    "mode": "native-mcp",
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today."
+  },
+  "requiredScopes": ["gmail:draft-create"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "There is no send scope listed above because none exists to request. This connector's capability contract has no commsSend flag anywhere in this file, by design -- see docs/CONNECTOR-CATALOG.md. A person opens Gmail and sends it themselves, every time, with no exception."
+}
