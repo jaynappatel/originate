@@ -23,3 +23,5 @@ Reopens the guided criteria interview and connector selection against an
 **existing** `originate.config.json` — the permanent "edit my skills" entry
 point (onboarding step 7). Shows a diff of what would change before
 writing.
+
+### `originate generate`
