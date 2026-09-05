@@ -27,3 +27,15 @@ Every `connector.json` declares a subset of:
 | `crmWrite` | Can write scored/qualified entities back as CRM records |
 | `commsDraft` | Can create a draft in some outbound channel |
 | `docs` | Can read/list documents in a data room or shared drive |
+
+**There is no `commsSend` flag, anywhere in this catalog, by design.** This
+is what makes Topwater's "nothing sends itself" guarantee structural rather
+than a prompt-level policy: a comms connector that could send would need a
+capability this schema has no name for, so declaring one would fail
+validation, not just violate a convention. If a future connector's
+underlying API technically supports sending, the connector's own
+`connector.json` must not declare a `commsSend`-shaped capability under any
+name — draft-only is enforced at the capability-contract layer, not left to
+the skill prompt's good judgment (the same reasoning Topwater's actual Gmail
+integration already applies: no send tool wired at any layer, not a policy
+the agent is trusted to follow).
