@@ -86,3 +86,5 @@ last slots carry the weight. Tables may bold headers.
 ("# [Entity] — [Output name]"), a metadata block with consistent labels
 (**Date:**, **Agent:**, **Sources/Folder read:**), and one section-labeling
 scheme per document.
+
+## Synthesis rules
