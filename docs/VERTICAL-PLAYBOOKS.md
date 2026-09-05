@@ -8,3 +8,5 @@ platform is only proven by the cases that don't fit the first mold cleanly.
 
 Every playbook below is a starting point a company edits during onboarding
 (`docs/ONBOARDING-FLOW.md`), never a locked template.
+
+---
