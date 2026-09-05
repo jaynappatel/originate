@@ -85,3 +85,14 @@ anything, and never let "email it" be read as "send it." If the user
 declines all three, do nothing beyond O2.
 
 ## Rule O4 — Reuse the last run; do only what is new
+
+This rule runs first, before any research, API call, or model work — it's
+the first thing a skill does once it knows its subject. A skill that has
+already answered a question does not answer it again: it finds the prior
+run (per O1's folder naming), works out what's genuinely new since then,
+carries every already-covered item forward verbatim (same source, same
+date-stamp — never re-stamped as today's, since nothing was re-checked),
+and does only the new work. The saved output is always the full merged
+result, never a delta, and reuse is never silent: the visible output states
+which prior run was reused, its date, and the new/carried-forward/total
+counts.
