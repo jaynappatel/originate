@@ -39,3 +39,7 @@ output sentence for the same reason.
 **W5. One qualifier per claim.** State uncertainty once — the confidence
 tag or one hedging word, never both, never stacked. A computed
 reconciliation is stated as arithmetic and needs no hedge at all.
+
+**W6. Active voice by default.** Name the actor — the company, the deck,
+the analysis. Passives are acceptable in gap ledgers and tables, never in a
+topic sentence.
