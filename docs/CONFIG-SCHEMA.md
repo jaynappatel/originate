@@ -106,3 +106,5 @@ Generalizes Topwater's Section 6 token/credit budget note. Advisory only —
 nothing in this schema enforces spend; it exists so a rendered skill can
 state the budget context in its own prose the way Topwater's skills do
 today ("pull broad with minimum fields, score before enriching").
+
+## `agentRuntime`
