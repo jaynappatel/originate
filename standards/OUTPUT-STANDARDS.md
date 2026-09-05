@@ -30,3 +30,10 @@ directory reach 788 mixed entries before this rule existed. Buckets:
 | `outputs/deals/<{{vocabulary.entity}}>/` | Root-level runs about one entity |
 | `outputs/internal/` | Work that isn't scoped to a category or an entity |
 | `diligence/<{{vocabulary.entity}}>/outputs/` | Entity-scoped diligence agents, kept deliberately separate from `outputs/deals/` — the data-room agents read and write their own tree beside the documents they analyze |
+
+`<subject>` is what the run is about, lowercased and hyphenated — the
+category slug or entity slug — and appears in the path (via `<base>`)
+rather than repeated again in the folder name. `<skill>` is the skill's own
+id. `<YYYY-MM-DD>-<HHMM>` is the run's start time — the timestamp is what
+separates two runs, so a rerun always lands in its own folder; folders
+never merge because it's the same session or the same day.
