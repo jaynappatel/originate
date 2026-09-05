@@ -48,3 +48,5 @@ round intermediate values; round only the final reported number. Compute
 each derived value once and reuse it everywhere it appears — two sections
 never show two different values for the same quantity, and every stated
 total must be shown rebuilding from its named components.
+
+### Rule 4 — Confidence tagging
