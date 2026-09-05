@@ -18,3 +18,13 @@ that dispatches Claude Code skills to run:
   detection,
 - a structural "nothing sends itself" guarantee — the comms connector has no
   send capability wired at any layer, full stop.
+
+That system works, and this design keeps every one of those mechanisms
+unchanged — see §3. What it does not generalize is *content*: the scoring
+rubric is duplicated across `CLAUDE.md` prose, `scoringRubric.ts`, and
+`score-companies/SKILL.md`, kept in sync only by a test
+(`scoringRubricSkillSync.test.ts`); the connectors are Grata/Affinity/Clay/
+Gmail specifically; the vocabulary is "company/ARR/founder"; onboarding
+(`onboarding.ts`) checks one person's Claude Code login and one workspace
+folder. All of that is Topwater Capital's own configuration wearing the
+engine, not the engine itself.
