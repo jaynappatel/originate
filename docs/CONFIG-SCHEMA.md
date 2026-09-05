@@ -108,3 +108,9 @@ state the budget context in its own prose the way Topwater's skills do
 today ("pull broad with minimum fields, score before enriching").
 
 ## `agentRuntime`
+
+Two independent fields, deliberately not one — see `ARCHITECTURE.md` §6 for
+why conflating "who edits my skills" with "who runs my pipeline" is the
+likely design mistake here. `skillEditing` accepts `"both"`; `primary` does
+not, because a pipeline run needs one deterministic runtime per execution,
+not an ambiguous choice made at run time.
