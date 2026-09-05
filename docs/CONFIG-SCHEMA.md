@@ -19,3 +19,9 @@ correctly without a vertical-specific conditional baked into the shared
 core.
 
 ## `vertical`
+
+A label used only to pick which starter config and vertical overlay seeded
+this tenant — it has no runtime effect after generation. Changing it later
+doesn't retroactively change anything; a tenant's actual behavior is fully
+determined by `criteria`, `connectors`, `pipeline`, and `diligence` below.
+`custom` means "start blank, no overlay."
