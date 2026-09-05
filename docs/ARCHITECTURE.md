@@ -111,3 +111,7 @@ implementation doesn't quietly drop one.
 ---
 
 ## 4. `originate.config.json` — the single source of truth
+
+This is the thing that replaces CLAUDE.md-as-config plus scattered
+TypeScript constants. Full schema: `schema/originate.config.schema.json`.
+Annotated walkthrough: `docs/CONFIG-SCHEMA.md`. Shape:
