@@ -30,3 +30,14 @@ template is validated against (§5 of `ARCHITECTURE.md`).
 Structurally identical to VC — the differences are in criteria, not
 mechanism, which is exactly the proof point that PE didn't need its own
 pipeline shape:
+
+- **Criteria shift:** EBITDA and cash-flow thresholds replace ARR-multiple
+  thinking; "no venture funding" may be a *positive* signal rather than a
+  hard requirement; hold-period and add-on-acquisition fit become judgment
+  signals.
+- **Discovery:** same connector class as VC (Grata/PitchBook-style), often
+  layered with proprietary broker relationships that show up as a
+  `documentStore` connector rather than a `discovery` one (inbound teasers).
+- **Diligence:** same 8-specialist shape; the fit scorecard and re-rate
+  thesis (see `standards/EVIDENCE-STANDARDS.md`) are PE/VC-specific and live
+  in the vertical overlay, not the shared grounding rules.
