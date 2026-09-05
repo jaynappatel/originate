@@ -54,3 +54,5 @@ questions rather than "what are your criteria?" — e.g. for `tiers`: "What's
 the minimum [ARR / years of experience / cap rate] for something you'd
 reach out to immediately?" with the vertical's starter config's own
 thresholds shown as an editable example, not a blank field.
+
+## 4. Connector selection
