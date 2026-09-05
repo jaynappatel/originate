@@ -88,3 +88,14 @@ which is what makes "nothing sends itself" structural rather than a policy
 a config could accidentally turn on.
 
 ## `diligence`
+
+`enabled: false` (with `specialists: []`) is a fully valid, first-class
+state — see the sales-agency vertical. When enabled, `specialists` is an
+ordered list of `{id, folder, question?, sharedFolderOk?, sharedFolderReason?}`;
+the generator instantiates
+`templates/core/diligence-specialist/SKILL.md.tmpl` once per entry, each
+locked to reading only its own named folder (`sharedFolderOk` allows the
+documented Topwater exception where two specialists share a folder but ask
+different questions — e.g. AI-opportunity and product-diligence both
+reading `product/` — and `sharedFolderReason` states which folder and why,
+required whenever `sharedFolderOk` is true).
