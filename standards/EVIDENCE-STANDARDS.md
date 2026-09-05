@@ -16,3 +16,5 @@ VC/PE-specific analytical frameworks and belong in a vertical overlay's own
 `diligence-memo` addendum, not in the rules every diligence skill in every
 vertical must follow. See `templates/verticals/vc/` for how VC restates
 them.
+
+## The six non-negotiable rules
