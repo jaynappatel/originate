@@ -66,3 +66,5 @@ point-of-use permission gating and checkpointing behavior specified in
 single largest piece of work deferred past this scaffold — it's also where
 the Codex adapter layer (§6 of `ARCHITECTURE.md`) has to exist for any
 connector whose `codexAdapterStatus` is `not-yet-ported`.
+
+## What this spec deliberately does not decide
