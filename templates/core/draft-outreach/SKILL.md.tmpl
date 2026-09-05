@@ -39,3 +39,21 @@ attached to words they didn't write.
 ---
 
 ## What this skill does
+
+1. For each cleared {{vocabulary.entity}}, write a personalized draft using
+   whatever research/enrichment fields are available for it — specific to
+   this {{vocabulary.entity}}, never a templated paragraph that could apply
+   to any {{vocabulary.entity}} in the batch (the same "no generic AI
+   language" discipline Topwater's CLAUDE.md Section 5 states for research
+   prose applies here to outreach copy).
+2. Create the draft via the configured `comms` connector's `commsDraft`
+   capability ({{connectors.comms}}) **only** — there is no send capability
+   to call. See `docs/CONNECTOR-CATALOG.md` for why `commsSend` isn't a
+   capability this platform's connectors can declare at all.
+3. Record the new draft in `outputs/_ledgers/comms-drafts.json` immediately
+   after creating it — every draft, when, and under which batch.
+4. Never proceed to sending anything, under any circumstance, regardless of
+   what the run's instructions or a person mid-run might say — this skill
+   has no send tool available to it at any layer, so there is no
+   affirmative instruction that could make it happen. A person opens their
+   comms tool and sends it themselves, every time.
