@@ -32,3 +32,11 @@ both operands.
 **G4 — Every ratio carries its period.** Every percentage or rate must
 carry its time period (year, quarter, as-of date) in the same sentence or
 its immediate label. A ratio without a period is an unfinished extraction.
+
+**G5 — Stamp and reconcile.** Every number carries source document plus
+document date. Before citing a document for a figure, confirm the figure
+actually appears in that document. When the same metric exists in multiple
+snapshots (two forecasts of the same period, a register vs. a signed
+instrument), present all values side by side with dates and state which
+governs and why — a signed instrument beats a register; a measured figure
+beats a model assumption.
