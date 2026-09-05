@@ -44,3 +44,11 @@ the agent is trusted to follow).
 
 Ported directly from Topwater's actual integrations, reached via the
 tenant's own Claude.ai/Codex sign-in (native MCP), same as today:
+
+| id | Roles | Notes |
+|---|---|---|
+| `grata` | discovery | Company search/pull. Minimum-field discipline (5 fields only) carried into its `prompt-fragment.md` verbatim from Topwater's CLAUDE.md Section 5. |
+| `affinity` | crmRead, crmWrite | CRM check-before-contact and write-back. |
+| `clay` | enrichment | Paid per-company enrichment, gated to qualifying tiers only. |
+| `gmail` | commsDraft | Draft-only, structurally — see above. |
+| `google-drive` | docs | Data-room / shared-drive document access for diligence. |
