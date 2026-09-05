@@ -40,3 +40,8 @@ snapshots (two forecasts of the same period, a register vs. a signed
 instrument), present all values side by side with dates and state which
 governs and why — a signed instrument beats a register; a measured figure
 beats a model assumption.
+
+**G6 — Never inherit the subject's glossary.** A subject's own labels
+(their "recurring revenue," their "run-rate," their "qualified pipeline")
+are claims, not definitions. Verify every such label against how the
+figure was actually computed before restating it as fact.
