@@ -14,3 +14,11 @@ enrichment row yet, or one whose tier just changed into scope, is new work;
 one already enriched is not redone.
 
 ## Eligibility — the spend gate
+
+Only {{vocabulary.entityPlural}} in a qualifying tier
+(`{{budget.enrichmentEligibleTiers|| "the tiers marked eligible in criteria.tiers"}}`)
+are eligible for this step. Never enrich a {{vocabulary.entity}} that
+scoring already marked as an outright pass or as an ineligible tier — this
+is the deliberate reason scoring runs as its own separate stage before this
+one: paying an `enrichment` connector for a {{vocabulary.entity}} that
+scoring already ruled out wastes real budget for no possible benefit.
