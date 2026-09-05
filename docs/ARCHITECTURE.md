@@ -211,3 +211,5 @@ rendering it against the VC starter config doesn't reproduce Topwater's
 actual skill, the template dropped something real.
 
 ---
+
+## 6. Onboarding — the guided, chat-driven setup
