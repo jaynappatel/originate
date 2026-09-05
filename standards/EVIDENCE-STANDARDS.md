@@ -71,3 +71,5 @@ recommendation. In practice: produce a structured extraction output first,
 then a plain-English interpretation section below it, so a reviewer who
 wants to check a number reads the extraction layer, and one who wants the
 analyst's read reads the interpretation layer.
+
+### Rule 6 — Gap ledger
