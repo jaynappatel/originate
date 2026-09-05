@@ -223,3 +223,7 @@ skills" reopens the same chat editor, scoped to just that tenant's files,
 for the life of the account.
 
 ### Claude Code vs. Codex — two separate decisions
+
+The request to "let them choose both Claude and Codex" is really two
+independent choices, and conflating them is the most likely design mistake
+here:
