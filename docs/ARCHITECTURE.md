@@ -209,3 +209,5 @@ the output is line-for-line equivalent to Topwater's real skill file, modulo
 equivalence is the test for whether a template generalized correctly: if
 rendering it against the VC starter config doesn't reproduce Topwater's
 actual skill, the template dropped something real.
+
+---
