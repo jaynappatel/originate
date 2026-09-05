@@ -107,3 +107,5 @@ implementation doesn't quietly drop one.
   convention, the guaranteed-PDF rule, the reuse-before-redo rule, the
   citation/confidence-tagging/two-layer-extraction-vs-interpretation
   discipline, and the sentence-level prose rules. See `standards/`.
+
+---
