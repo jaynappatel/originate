@@ -45,3 +45,9 @@ beats a model assumption.
 (their "recurring revenue," their "run-rate," their "qualified pipeline")
 are claims, not definitions. Verify every such label against how the
 figure was actually computed before restating it as fact.
+
+**G7 — Identify the document before analyzing it.** State what each
+document is (an order form, a lease, a loss-run report, a reference-call
+transcript, an amendment) before extracting from it, and note when one file
+bundles several instruments. Attribute each clause to the instrument it
+actually lives in.
