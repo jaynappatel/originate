@@ -46,11 +46,27 @@ every entry under `diligence`, see below) can be entirely absent rather than
 merely disabled, for verticals like sales-agency where a stage's concept
 doesn't apply at all.
 
+`pipeline.stageA` is optional vocabulary for Stage A only —
+`{unitNoun, inputNoun}` (e.g. VC: `"category"`/`"category name"`;
+recruiting: `"mandate"`/`"role/mandate name"`). Every reference to it in
+`templates/core/*.tmpl` uses the `{{path|| "default"}}` fallback syntax
+(`ARCHITECTURE.md` §5), so a vertical that omits this object entirely still
+renders — just with VC-flavored defaults ("category").
+
 ## `criteria`
 
 The predicate DSL — see `ARCHITECTURE.md` §4 for why it's intentionally
-small. Four parts:
+small. Five parts:
 
+- **`stageAQuestions`** — the required questions Stage A (category-research)
+  must answer before a human can approve it, each `{title, prompt, jsonKey}`.
+  This is what makes the category-research template's worked example in
+  `ARCHITECTURE.md` §5 actually renderable: without it, `{{#each
+  criteria.stageAQuestions}}` has nothing to iterate and the required-
+  questions section comes out empty. VC's four questions (competitive
+  dynamics, customer segmentation, workflow product quality, exit landscape)
+  are the reference set — every vertical defines its own from scratch, there
+  is no shared default list.
 - **`immediatePass`** — hard stop-and-pass rules, checked first, before any
   other work (generalizes Topwater's Section 2 "Immediate Pass Criteria").
 - **`tiers`** — ordered list of `{name, rules[]}`; a candidate/company/
