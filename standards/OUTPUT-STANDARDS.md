@@ -37,3 +37,9 @@ rather than repeated again in the folder name. `<skill>` is the skill's own
 id. `<YYYY-MM-DD>-<HHMM>` is the run's start time — the timestamp is what
 separates two runs, so a rerun always lands in its own folder; folders
 never merge because it's the same session or the same day.
+
+Create the folder; never reuse or overwrite one that exists — this is what
+makes a run's outputs immutable once written. Two runs in the same
+clock-minute append `-2`, `-3`. Every artifact from the run (the dated
+source file, any paired `-interpretation.md`, the guaranteed PDF from O2,
+any sheet/deck from O3) lands inside that one folder.
