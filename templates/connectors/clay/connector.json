@@ -1,0 +1,13 @@
+{
+  "id": "clay",
+  "displayName": "Clay",
+  "roles": ["enrichment"],
+  "capabilities": { "discovery": false, "enrichment": true, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "native-mcp",
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today."
+  },
+  "requiredScopes": ["clay:enrich"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Paid per-entity enrichment. Must only ever be called on entities that a prior score-entities run already marked eligible -- see templates/core/enrich-entities/SKILL.md.tmpl's eligibility gate."
+}
