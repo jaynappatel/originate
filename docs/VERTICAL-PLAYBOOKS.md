@@ -73,3 +73,5 @@ noun actually generalizes.
   hire/no-hire recommendation memo. Same folder-locking discipline as
   Topwater's data-room specialists (a reference-checker never reads the
   compensation-negotiation notes), just a different kind of document.
+
+## 4. Real Estate Acquisition
