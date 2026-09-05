@@ -13,3 +13,5 @@ vertical.
 ---
 
 ## Rule O1 — One subject-labelled folder per run
+
+Before saving anything, compute a run folder:
