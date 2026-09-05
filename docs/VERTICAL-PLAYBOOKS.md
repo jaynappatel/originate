@@ -145,3 +145,5 @@ stages A–E, with diligence off entirely.
   references it. This is the vertical that forces the onboarding wizard and
   the template generator to treat diligence as genuinely optional, not
   "on but empty."
+
+## 7. Insurance MGA (submission underwriting)
