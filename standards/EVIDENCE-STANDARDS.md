@@ -18,3 +18,7 @@ vertical must follow. See `templates/verticals/vc/` for how VC restates
 them.
 
 ## The six non-negotiable rules
+
+These apply to every diligence specialist without exception. A person is
+making a real decision from this output — a confident-sounding wrong number
+is worse than an honest null.
