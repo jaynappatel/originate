@@ -1,0 +1,76 @@
+{
+  "org": {
+    "name": "Example Search Partners",
+    "approverTitle": "hiring lead",
+    "voiceProfiles": [
+      { "id": "recruiter-default", "styleNotes": "Warm, specific about the role, references one concrete detail from the candidate's background." }
+    ]
+  },
+  "vertical": "recruiting",
+  "vocabulary": {
+    "entity": "candidate",
+    "entityPlural": "candidates",
+    "verdicts": ["ADVANCE", "HOLD", "DECLINE"]
+  },
+  "pipeline": {
+    "stages": [
+      { "id": "category-research", "order": 10, "enabled": true },
+      { "id": "discover-entities", "order": 15, "enabled": true },
+      { "id": "check-crm-history", "order": 18, "enabled": true },
+      { "id": "score-entities", "order": 20, "enabled": true },
+      { "id": "enrich-entities", "order": 30, "enabled": true },
+      { "id": "draft-outreach", "order": 35, "enabled": true },
+      { "id": "sync-to-crm", "order": 40, "enabled": true }
+    ]
+  },
+  "criteria": {
+    "immediatePass": [
+      { "field": "yearsRelevantExperience", "op": "lt", "value": 3 },
+      { "field": "compExpectation", "op": "gt", "value": 260000 },
+      { "field": "willingToRelocateIfRequired", "op": "eq", "value": false }
+    ],
+    "tiers": [
+      {
+        "name": "Tier 1 - Strong Fit",
+        "rules": [
+          { "field": "yearsRelevantExperience", "op": "gte", "value": 8 },
+          { "field": "compExpectation", "op": "lte", "value": 220000 },
+          { "field": "locationMatch", "op": "eq", "value": true }
+        ]
+      },
+      {
+        "name": "Tier 2 - Worth a Screen",
+        "rules": [
+          { "field": "yearsRelevantExperience", "op": "gte", "value": 5 },
+          { "field": "compExpectation", "op": "lte", "value": 240000 }
+        ]
+      }
+    ],
+    "judgmentSignals": [
+      { "signal": "leadership style matches the team's stated culture", "direction": "positive" },
+      { "signal": "comparable-company pedigree for this specific role", "direction": "positive" },
+      { "signal": "clear, specific reason for leaving current role", "direction": "positive" }
+    ],
+    "redFlags": [
+      { "signal": "unexplained employment gaps", "direction": "negative", "escalateTo": "hiring-lead" },
+      { "signal": "frequent job-hopping with no clear pattern", "direction": "negative", "escalateTo": "hiring-lead" }
+    ],
+    "onMissingData": "null-and-flag"
+  },
+  "connectors": {
+    "discovery": ["linkedin-recruiter"],
+    "enrichment": ["clay"],
+    "crm": ["salesforce"],
+    "comms": ["gmail"],
+    "documentStore": ["google-drive"]
+  },
+  "diligence": {
+    "enabled": true,
+    "specialists": [
+      { "id": "reference-check", "folder": "references", "question": "What do this candidate's references say about performance, leadership style, and reasons for departure at prior roles?" },
+      { "id": "background-review", "folder": "background", "question": "Employment history, education, and credential verification against what the candidate stated." }
+    ]
+  },
+  "budget": { "creditsPerYear": 20000, "seats": 3 },
+  "agentRuntime": { "primary": "codex", "skillEditing": "claude-code" }
+}
