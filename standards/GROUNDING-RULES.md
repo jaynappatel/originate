@@ -51,3 +51,9 @@ document is (an order form, a lease, a loss-run report, a reference-call
 transcript, an amendment) before extracting from it, and note when one file
 bundles several instruments. Attribute each clause to the instrument it
 actually lives in.
+
+**G8 — Date arithmetic runs in code.** Expiry equals effective date plus
+term. A notice deadline equals expiry minus the notice period — the
+deadline is when action is due, not when a window opens. Recompute every
+date from the source instrument; when a register disagrees with the
+instrument, the instrument wins and the conflict is flagged.
