@@ -23,3 +23,10 @@ Before saving anything, compute a run folder:
 `<base>` is the bucket this run belongs to, never a single flat `outputs/`
 for everything — a flat bucket is what let Topwater's own `outputs/`
 directory reach 788 mixed entries before this rule existed. Buckets:
+
+| `<base>` | For |
+|---|---|
+| `outputs/sourcing/<category>/` | Any run scoped to a sourcing category (or role/mandate, market thesis, ICP, risk appetite — whatever Stage A produces for this vertical) |
+| `outputs/deals/<{{vocabulary.entity}}>/` | Root-level runs about one entity |
+| `outputs/internal/` | Work that isn't scoped to a category or an entity |
+| `diligence/<{{vocabulary.entity}}>/outputs/` | Entity-scoped diligence agents, kept deliberately separate from `outputs/deals/` — the data-room agents read and write their own tree beside the documents they analyze |
