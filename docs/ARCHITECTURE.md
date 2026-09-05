@@ -40,3 +40,7 @@ get caught now rather than when the second customer signs up.
 ---
 
 ## 2. The generalizable shape
+
+Every archetype below reduces to the same pipeline. What changes is
+*vocabulary*, *criteria*, and *which connectors fill which stage role* — never
+the pipeline shape itself.
