@@ -52,3 +52,14 @@ shell, and no execution engine yet; see "Explicit scope boundary" in
 `docs/ARCHITECTURE.md` for exactly what's deferred and why the scaffold is
 still precise enough to make building those a mechanical next step rather
 than a redesign.
+
+```
+docs/          design documents (read these first)
+schema/        originate.config.schema.json — the JSON Schema for a tenant's config
+templates/
+  core/        9 universal, vertical-agnostic SKILL.md templates
+  verticals/   thin overlays per company archetype (vc, recruiting, real-estate)
+  connectors/  the connector registry — one directory per data source / tool
+standards/     ported, generalized OUTPUT / EVIDENCE / WRITING / GROUNDING rules
+cli/           spec for the `originate` CLI (init/configure/generate/validate/run)
+```
