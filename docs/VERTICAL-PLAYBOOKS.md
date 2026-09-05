@@ -24,3 +24,5 @@ template is validated against (§5 of `ARCHITECTURE.md`).
 - **CRM:** Affinity — check before contact, write back on outreach.
 - **Outreach:** Gmail draft in a named partner's voice; never sent.
 - **Diligence:** 8 specialists (financials, commercial ×2, team, product ×2, GTM, market) over a locked data room → memo with an enforced verdict line.
+
+## 2. Private Equity / Search Fund
