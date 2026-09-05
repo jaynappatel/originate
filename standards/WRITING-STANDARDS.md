@@ -20,3 +20,8 @@ real sentence.
 the relationship between them. Three or more values go into a table or get
 split into separate sentences that each state one relationship. Arrow
 chains and slash chains never appear in prose.
+
+**W2. Sentences have verbs.** No colon-label openers ("Pipeline: $1.5M
+across 31 opportunities..."). A line that starts with a bare noun and a
+colon is a table row wearing prose clothing — write the sentence or move
+the content to an exhibit.
