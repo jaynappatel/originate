@@ -54,3 +54,10 @@ the pipeline shape itself.
 | **E. Outreach** (draft only, never sent) | partner-voice email | candidate outreach | broker/owner outreach | corp dev intro | sales sequence draft | broker response draft |
 | **CRM check + write-back** | Affinity | ATS/CRM | CRM | CRM | Salesforce/HubSpot | policy system |
 | **Diligence** (locked folders → specialist memos → enforced verdict) | 8 specialists → PROCEED/PASS/etc. | reference checks | title/environmental/lease abstract | financial/legal/commercial/team | usually **off** | policy/loss-run review → BIND/DECLINE/REFER |
+
+Two rows matter more than the rest for proving genericity, and both are
+deliberate: **sales agency** shows a vertical that runs only stages A–E, with
+diligence disabled entirely — the platform must not assume diligence is
+always on. **Insurance MGA** shows a non-`PROCEED`/`PASS` verdict vocabulary —
+the platform must not hardcode the verdict set. Full per-vertical detail is
+in `docs/VERTICAL-PLAYBOOKS.md`.
