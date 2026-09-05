@@ -150,3 +150,28 @@ stages A–E, with diligence off entirely.
 
 The vertical that proves the verdict vocabulary can't be hardcoded to
 PROCEED/PASS, and that "discovery" doesn't have to mean open-market search.
+
+- **Entity:** submission. **Verdicts:** BIND / DECLINE / REFER.
+- **Stage A (thesis):** risk appetite statement — lines of business, limits,
+  geographies, excluded classes — approved by underwriting leadership.
+- **Stage B (discovery), reframed:** not an open-market search at all — the
+  "discovery" connector role is filled by the MGA's own submission intake
+  queue (an email/portal feed), filtered against the risk appetite
+  statement. This is the clearest case where "discovery" means "triage an
+  inbound stream" rather than "go find candidates," and the platform design
+  has to support that without a special case: a `discovery` connector is
+  just whatever source produces candidate entities, inbound or outbound.
+- **Stage C (scoring):** eligibility gates (excluded class, limit exceeds
+  appetite, geography excluded) as hard passes; loss-history quality and
+  submission completeness as judgment signals.
+- **Stage D (enrichment):** loss-run history, exposure data, prior-carrier
+  records.
+- **Stage E (outreach):** a broker response draft (quote, decline letter, or
+  request for more information) — draft-only, same as every other vertical,
+  which matters more here than most: an auto-sent bind or decline is a
+  regulatory and financial event, not just an awkward email.
+- **Diligence, reframed:** policy and loss-run document review against an
+  underwriting checklist, ending in the BIND/DECLINE/REFER verdict — same
+  locked-folder-per-specialist shape, different verdict vocabulary and
+  different specialists (loss-history review, coverage-terms review,
+  exposure review in place of financial/commercial/team/product).
