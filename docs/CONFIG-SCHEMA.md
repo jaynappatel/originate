@@ -17,3 +17,5 @@ one-partner shop and a twelve-recruiter agency both fit the same field.
 present for verticals with a re-rate-style thesis) let templates render
 correctly without a vertical-specific conditional baked into the shared
 core.
+
+## `vertical`
