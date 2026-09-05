@@ -28,3 +28,7 @@ components in the output; if the components don't sum, show the gap rather
 than rounding it away. Never mix incompatible bases (e.g. audited vs.
 unaudited, gross vs. net) in one subtraction without stating the basis of
 both operands.
+
+**G4 — Every ratio carries its period.** Every percentage or rate must
+carry its time period (year, quarter, as-of date) in the same sentence or
+its immediate label. A ratio without a period is an unfinished extraction.
