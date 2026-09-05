@@ -10,3 +10,5 @@ Every playbook below is a starting point a company edits during onboarding
 (`docs/ONBOARDING-FLOW.md`), never a locked template.
 
 ---
+
+## 1. Venture Capital (reference vertical)
