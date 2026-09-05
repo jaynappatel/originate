@@ -38,3 +38,5 @@ silently, or pattern-match to a "typical" example in this space. "Not
 extractable" is not the same as "not found": before declaring a file
 unreadable, attempt every reasonable extraction method in order and record
 which one succeeded, or the exact failure of each attempt tried.
+
+### Rule 3 — Determinism rule
