@@ -19,3 +19,7 @@ Before saving anything, compute a run folder:
 ```
 <base>/<subject>-<skill>-<YYYY-MM-DD>-<HHMM>/
 ```
+
+`<base>` is the bucket this run belongs to, never a single flat `outputs/`
+for everything — a flat bucket is what let Topwater's own `outputs/`
+directory reach 788 mixed entries before this rule existed. Buckets:
