@@ -18,3 +18,8 @@ result against `schema/originate.config.schema.json` before proceeding;
 refuses to write an invalid config.
 
 ### `originate configure`
+
+Reopens the guided criteria interview and connector selection against an
+**existing** `originate.config.json` — the permanent "edit my skills" entry
+point (onboarding step 7). Shows a diff of what would change before
+writing.
