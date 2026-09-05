@@ -82,6 +82,87 @@ function setActiveButton(container, value, attr) {
   });
 }
 
+function setPet(elementId, state) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  const size = el.classList.contains('large') ? 64 : 28;
+  el.innerHTML = renderPetSVG(state, size);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// ---------- onboarding gate ----------
+
+const ONBOARDING_STEPS = [
+  { state: 'thinking', status: 'Reading what you described...', log: '> parsing purpose statement' },
+  { state: 'searching', status: 'Matching against the closest starting point...', log: '> comparing against vertical playbooks' },
+  { state: 'generating', status: 'Writing your config and rendering skills...', log: '> resolving criteria, connectors, and voice profile' },
+];
+
+async function runOnboarding() {
+  const vertical = document.getElementById('ob-vertical').value;
+  const purpose = document.getElementById('ob-purpose').value.trim();
+  const statusEl = document.getElementById('onboarding-status');
+  const logEl = document.getElementById('onboarding-log');
+  const doneEl = document.getElementById('onboarding-done');
+  const generateBtn = document.getElementById('ob-generate-btn');
+  const enterBtn = document.getElementById('ob-enter-btn');
+
+  generateBtn.disabled = true;
+  doneEl.hidden = true;
+  enterBtn.hidden = true;
+  logEl.textContent = '';
+
+  await loadVertical(vertical);
+  if (purpose) config.org.purposeNote = purpose;
+
+  for (const step of ONBOARDING_STEPS) {
+    setPet('onboarding-pet', step.state);
+    statusEl.textContent = step.status;
+    logEl.textContent += `${step.log}\n`;
+    await sleep(700);
+  }
+
+  setPet('onboarding-pet', 'done');
+  statusEl.textContent = 'Done.';
+  const specialistCount = (config.diligence.specialists || []).length;
+  doneEl.innerHTML = `<b>${config.org.name}</b> is ready. Config written, skills rendered for the ${vertical === 'custom' ? 'blank' : vertical} starting point`
+    + (specialistCount ? ` with ${specialistCount} diligence specialist(s)` : '')
+    + `. Open the console to review or edit anything before it runs.`;
+  doneEl.hidden = false;
+  enterBtn.hidden = false;
+  generateBtn.disabled = false;
+}
+
+function enterConsole() {
+  document.getElementById('onboarding').hidden = true;
+  document.getElementById('main-shell').hidden = false;
+  setActiveButton(document.getElementById('vertical-switcher'), config.vertical || 'custom', 'data-vertical');
+  renderSidebar();
+  renderConfigEditor();
+  populateSpecialistPicker();
+  setPet('topbar-pet', 'idle');
+}
+
+function wireOnboarding() {
+  setPet('onboarding-pet', 'idle');
+  document.getElementById('ob-generate-btn').addEventListener('click', runOnboarding);
+  document.getElementById('ob-enter-btn').addEventListener('click', enterConsole);
+  document.getElementById('nav-restart-onboarding').addEventListener('click', () => {
+    document.getElementById('main-shell').hidden = true;
+    document.getElementById('onboarding').hidden = false;
+    document.getElementById('onboarding-done').hidden = true;
+    document.getElementById('ob-enter-btn').hidden = true;
+    document.getElementById('onboarding-status').textContent = '';
+    document.getElementById('onboarding-log').textContent = '';
+    setPet('onboarding-pet', 'idle');
+  });
+}
+
+// ---------- main console ----------
+
 function renderSidebar() {
   document.getElementById('f-org-name').value = config.org.name || '';
   document.getElementById('f-approver-title').value = config.org.approverTitle || '';
@@ -205,16 +286,22 @@ function wireVerticalSwitcher() {
   });
 }
 
+const TAB_TITLES = { config: 'Config', generate: 'Generate skill' };
+
 function activateTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach((b) => {
+  document.querySelectorAll('.tab-btn[data-tab]').forEach((b) => {
+    b.classList.toggle('active', b.getAttribute('data-tab') === tab);
+  });
+  document.querySelectorAll('.nav-item[data-tab]').forEach((b) => {
     b.classList.toggle('active', b.getAttribute('data-tab') === tab);
   });
   document.getElementById('tab-config').hidden = tab !== 'config';
   document.getElementById('tab-generate').hidden = tab !== 'generate';
+  document.getElementById('topbar-title').textContent = TAB_TITLES[tab] || tab;
 }
 
 function wireTabs() {
-  document.querySelectorAll('.tab-btn').forEach((btn) => {
+  document.querySelectorAll('.tab-btn[data-tab], .nav-item[data-tab]').forEach((btn) => {
     btn.addEventListener('click', () => activateTab(btn.getAttribute('data-tab')));
   });
 }
@@ -249,9 +336,20 @@ function populateSpecialistPicker() {
   });
 }
 
+function setStatusPill(mode, text) {
+  const pill = document.getElementById('status-pill');
+  pill.classList.remove('busy', 'fail');
+  if (mode === 'busy') pill.classList.add('busy');
+  if (mode === 'fail') pill.classList.add('fail');
+  document.getElementById('status-pill-text').textContent = text;
+}
+
 async function generateSkill() {
   const skillId = document.getElementById('skill-select').value;
   const output = document.getElementById('generated-output');
+  setPet('topbar-pet', 'thinking');
+  setStatusPill('busy', 'Generating');
+  await sleep(250);
   try {
     const res = await fetch(`../templates/core/${skillId}/SKILL.md.tmpl`);
     const source = await res.text();
@@ -260,14 +358,24 @@ async function generateSkill() {
       const specialists = config.diligence.specialists || [];
       if (specialists.length === 0) {
         output.textContent = 'No specialists configured -- add one in the raw config JSON, or switch verticals.';
+        setPet('topbar-pet', 'idle');
+        setStatusPill('ready', 'Ready');
         return;
       }
       const idx = Number(document.getElementById('specialist-select').value || 0);
       ctx = Object.assign({}, config, { specialist: specialists[idx] });
     }
+    setPet('topbar-pet', 'generating');
+    await sleep(250);
     output.textContent = renderTemplate(source, ctx);
+    setPet('topbar-pet', 'done');
+    setStatusPill('ready', 'Ready');
+    await sleep(1200);
+    setPet('topbar-pet', 'idle');
   } catch (err) {
     output.textContent = `Could not generate: ${err.message}`;
+    setPet('topbar-pet', 'failed');
+    setStatusPill('fail', 'Error');
   }
 }
 
@@ -300,16 +408,27 @@ function wireJsonEditor() {
 }
 
 // Deep-link support: ?vertical=vc&tab=generate&skill=category-research&autogen=1
-// lets a specific view be bookmarked, shared, or screenshotted directly
-// instead of only reachable by clicking through the UI.
+// skips the onboarding gate entirely and lets a specific console view be
+// bookmarked, shared, or screenshotted directly.
 async function applyDeepLink() {
   const params = new URLSearchParams(window.location.search);
+
+  // ?autoOnboard=1 triggers the setup flow itself (useful for demos and
+  // for screenshotting the onboarding gate mid-animation).
+  if (params.get('autoOnboard') === '1') {
+    const v = params.get('vertical') || 'vc';
+    document.getElementById('ob-vertical').value = v;
+    document.getElementById('ob-purpose').value = params.get('purpose') || '';
+    await runOnboarding();
+    if (params.get('enter') === '1') enterConsole();
+    return true;
+  }
+
   const vertical = params.get('vertical');
-  if (vertical && ['vc', 'recruiting', 'real-estate', 'custom'].includes(vertical)) {
+  if (!vertical) return false;
+  if (['vc', 'recruiting', 'real-estate', 'custom'].includes(vertical)) {
     await loadVertical(vertical);
-    setActiveButton(document.getElementById('vertical-switcher'), vertical, 'data-vertical');
-    renderSidebar();
-    renderConfigEditor();
+    enterConsole();
   }
   const tab = params.get('tab');
   if (tab === 'generate') {
@@ -323,18 +442,16 @@ async function applyDeepLink() {
       await generateSkill();
     }
   }
+  return true;
 }
 
 async function init() {
   await loadConnectorCatalog();
-  await loadVertical('vc');
-  renderSidebar();
-  renderConfigEditor();
+  wireOnboarding();
   wireSidebarInputs();
   wireVerticalSwitcher();
   wireTabs();
   populateSkillSelect();
-  populateSpecialistPicker();
   wireGenerate();
   wireJsonEditor();
   await applyDeepLink();
