@@ -192,3 +192,5 @@ templates/
     connector.json          machine-readable capability contract
     prompt-fragment.md      how a skill should call this connector's tools
 ```
+
+### Worked example: rendering `category-research` for the VC vertical
