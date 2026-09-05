@@ -174,3 +174,21 @@ vertical overlay is thin: a vocabulary swap, a starter `criteria` block, and
 an *additive* list of extra skills — VC/PE adds `cim-extract`; recruiting
 could add a reference-check skill. Overlays add; they don't have to override
 everything.
+
+```
+templates/
+  core/                            9 universal stage templates (this pass)
+    category-research/SKILL.md.tmpl
+    discover-entities/SKILL.md.tmpl      generalizes find-companies
+    score-entities/SKILL.md.tmpl         generalizes score-companies
+    enrich-entities/SKILL.md.tmpl        generalizes enrich-companies
+    check-crm-history/SKILL.md.tmpl      generalizes check-affinity-*
+    draft-outreach/SKILL.md.tmpl
+    diligence-specialist/SKILL.md.tmpl   instantiated once per configured specialist
+    diligence-memo/SKILL.md.tmpl
+    sync-to-crm/SKILL.md.tmpl
+  verticals/{vc,recruiting,real-estate}/config.starter.json
+  connectors/{grata,affinity,clay,gmail,google-drive,apollo,salesforce,linkedin-recruiter,costar}/
+    connector.json          machine-readable capability contract
+    prompt-fragment.md      how a skill should call this connector's tools
+```
