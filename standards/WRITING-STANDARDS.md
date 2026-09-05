@@ -53,3 +53,8 @@ sentence — a sentence needing two sources is two sentences. Tags are never
 bolded, backticked, or split mid-sentence.
 
 ## Paragraph and section rules
+
+**W8. Open with the point.** Every section and paragraph opens with a full
+sentence stating the finding — never a citation, a label, or a bare figure.
+Test: reading only the first sentence of every paragraph should reproduce
+the document's argument.
