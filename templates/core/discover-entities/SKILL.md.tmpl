@@ -27,3 +27,17 @@ exists purely to avoid paying for the same pull twice inside a month.
 ---
 
 ## What this skill does
+
+1. Reads the approved Stage A brief's `ideal_{{vocabulary.entity}}_profile`
+   as the search brief.
+2. Pulls a broad candidate list from each configured `discovery` connector
+   ({{connectors.discovery}}), respecting each connector's own minimum-field
+   discipline (see that connector's `prompt-fragment.md` in
+   `templates/connectors/`) — pull broad and cheap here; deep enrichment is
+   a later, gated stage.
+3. Where more than one `discovery` connector is configured, deduplicates
+   {{vocabulary.entityPlural}} across sources before handing the list
+   forward.
+4. Does not score, tier, or enrich anything in this step — that is the
+   scoring stage's job, run separately so nothing gets paid-enriched before
+   it's known to qualify.
