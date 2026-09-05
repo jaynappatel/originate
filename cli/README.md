@@ -56,3 +56,5 @@ checks: every `connectors.*` entry names a real id from
 unless paired with `sharedFolderOk: true`; every `vocabulary.verdicts`
 entry is uppercase-with-underscores (matching what `diligence-memo`'s
 mechanical verdict check expects).
+
+### `originate run <stage>`
