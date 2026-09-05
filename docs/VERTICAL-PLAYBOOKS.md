@@ -26,3 +26,7 @@ template is validated against (§5 of `ARCHITECTURE.md`).
 - **Diligence:** 8 specialists (financials, commercial ×2, team, product ×2, GTM, market) over a locked data room → memo with an enforced verdict line.
 
 ## 2. Private Equity / Search Fund
+
+Structurally identical to VC — the differences are in criteria, not
+mechanism, which is exactly the proof point that PE didn't need its own
+pipeline shape:
