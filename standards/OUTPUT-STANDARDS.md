@@ -96,3 +96,14 @@ and does only the new work. The saved output is always the full merged
 result, never a delta, and reuse is never silent: the visible output states
 which prior run was reused, its date, and the new/carried-forward/total
 counts.
+
+**This is not optional and has no age limit.** It exists because a system
+without it will eventually re-run a fully-covered batch to exhaustion
+before reaching the small number of genuinely new items in it — this
+happened concretely in Topwater's own history (a category rerun that
+re-scored 339 already-scored companies and died before reaching the 3 new
+ones). A connector being unavailable is never grounds for skipping this
+rule; it's the strongest argument for reusing what's already on disk. Four
+and only four things override reuse: an explicit user instruction to redo
+it, a prior run that failed or was interrupted, a change in the criteria or
+schema itself since the prior run, or a prior output that can't be parsed.
