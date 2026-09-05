@@ -85,3 +85,5 @@ not the full universe — so the company sees real, tailored output before
 committing spend. This surfaces config mistakes (a tier threshold that's
 clearly wrong for this market, a connector returning fields the criteria
 don't reference) while they're still cheap to fix.
+
+## 7. Ongoing edit loop
