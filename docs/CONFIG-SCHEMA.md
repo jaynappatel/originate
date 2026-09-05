@@ -50,3 +50,26 @@ doesn't apply at all.
 
 The predicate DSL — see `ARCHITECTURE.md` §4 for why it's intentionally
 small. Four parts:
+
+- **`immediatePass`** — hard stop-and-pass rules, checked first, before any
+  other work (generalizes Topwater's Section 2 "Immediate Pass Criteria").
+- **`tiers`** — ordered list of `{name, rules[]}`; a candidate/company/
+  property matches the first tier (in list order) whose rules all pass.
+  Each rule is `{field, op, value}` where `op` is one of `eq`, `ne`, `lt`,
+  `lte`, `gt`, `gte`, `in`, `not_in`, `contains`. `field` names are free
+  text resolved against whatever data the discovery/enrichment connectors
+  actually populate — the schema doesn't enumerate allowed fields, because
+  the allowed fields are exactly whatever this tenant's connectors produce.
+- **`judgmentSignals`** — `{signal, direction: positive|negative}` pairs
+  with no `value` — these render into the scoring skill's prompt as
+  qualitative signals for holistic judgment (Topwater's "Additional scoring
+  signals" and "Red flags" sections, unified into one shape with a
+  direction flag instead of two separately-formatted lists).
+- **`redFlags`** — like `judgmentSignals` but always negative and carrying
+  an `escalateTo` field (who gets notified, never a silent auto-pass) —
+  kept separate from `judgmentSignals` because a red flag's job is
+  escalation, not scoring weight.
+- **`onMissingData`** — a single policy string (default and only currently
+  specified value: `"null-and-flag"` — never guess, never screen out for a
+  missing field, set null and flag it, generalizing Topwater's CLAUDE.md
+  rule verbatim).
