@@ -7,3 +7,5 @@ placeholders, write files — not a redesign. See
 directory yet.
 
 ## Commands
+
+### `originate init [--vertical <name>]`
