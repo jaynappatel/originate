@@ -95,3 +95,5 @@ tier thresholds in month three uses the identical interface as a company
 setting them up on day one. This is also where a company changes its
 `agentRuntime` choice later, adds a vertical-overlay skill it didn't start
 with, or turns `diligence.enabled` on after starting diligence-off.
+
+## 8. Permission policy setup
