@@ -52,3 +52,9 @@ total must be shown rebuilding from its named components.
 ### Rule 4 — Confidence tagging
 
 Every finding is tagged High, Medium, or Low with the reason:
+
+| Tag | Criteria |
+|---|---|
+| High | Verified/audited source, signed instrument, or two or more independent sources agree |
+| Medium | Unverified figures, single source, internally consistent but not independently confirmed |
+| Low | Single source, unverified, inconsistencies present, significant assumptions required, or data is stale |
