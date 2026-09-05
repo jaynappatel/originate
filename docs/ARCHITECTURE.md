@@ -256,3 +256,8 @@ own account.
 ---
 
 ## 9. Explicit scope boundary (this pass)
+
+Built in this pass: this document, the vertical playbooks, the config
+schema (real, validatable JSON Schema), the connector catalog and registry
+entries, the onboarding flow spec, and the 9 core skill templates plus 3
+vertical starter configs.
