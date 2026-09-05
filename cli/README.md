@@ -16,3 +16,5 @@ criteria interview, connector selection — and writes the resulting
 `originate.config.json` to the new tenant workspace root. Validates the
 result against `schema/originate.config.schema.json` before proceeding;
 refuses to write an invalid config.
+
+### `originate configure`
