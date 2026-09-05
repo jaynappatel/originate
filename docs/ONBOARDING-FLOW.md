@@ -68,3 +68,11 @@ themselves automatically once fixed) rather than a blanket "connect
 everything before you can start" gate.
 
 ## 5. Generate
+
+Run the template generator (spec in `cli/README.md` — not implemented in
+this pass) against the finished `originate.config.json`: render each
+`templates/core/*/SKILL.md.tmpl` (plus any vertical-overlay additions) into
+the tenant's real `.claude/skills/*/SKILL.md`, and scaffold the tenant's
+workspace (`sourcing/`, `diligence/` if enabled, `docs/`, `outputs/`)
+matching Topwater's proven O1-O5 output-standards layout (see
+`standards/OUTPUT-STANDARDS.md`).
