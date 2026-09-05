@@ -44,3 +44,13 @@ get caught now rather than when the second customer signs up.
 Every archetype below reduces to the same pipeline. What changes is
 *vocabulary*, *criteria*, and *which connectors fill which stage role* — never
 the pipeline shape itself.
+
+| Stage | VC (Topwater today) | Recruiting | Real Estate Acquisition | Corp Dev / M&A | Sales Agency (BDR) | Insurance MGA |
+|---|---|---|---|---|---|---|
+| **A. Thesis** (human-approved before spend) | category research | role/mandate spec | market + asset-class thesis | acquisition thesis | ICP definition | risk appetite |
+| **B. Discovery** (cached, broad, cheap) | Grata company pull | candidate sourcing (LinkedIn/ATS) | listings (CoStar/LoopNet/Crexi) | market scan (Grata/PitchBook) | prospect lists (Apollo/ZoomInfo) | submission intake queue |
+| **C. Scoring** (before any paid spend) | tier vs. investment criteria | fit vs. role rubric | cap rate / NOI / price-per-unit gates | strategic fit + financial gates | ICP fit score | underwriting eligibility |
+| **D. Enrichment** (qualifying tiers only) | Clay contact enrichment | background/contact enrichment | comps, zoning, tax records | financials | contact + intent data | loss-run / exposure data |
+| **E. Outreach** (draft only, never sent) | partner-voice email | candidate outreach | broker/owner outreach | corp dev intro | sales sequence draft | broker response draft |
+| **CRM check + write-back** | Affinity | ATS/CRM | CRM | CRM | Salesforce/HubSpot | policy system |
+| **Diligence** (locked folders → specialist memos → enforced verdict) | 8 specialists → PROCEED/PASS/etc. | reference checks | title/environmental/lease abstract | financial/legal/commercial/team | usually **off** | policy/loss-run review → BIND/DECLINE/REFER |
