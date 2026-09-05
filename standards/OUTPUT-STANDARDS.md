@@ -107,3 +107,5 @@ rule; it's the strongest argument for reusing what's already on disk. Four
 and only four things override reuse: an explicit user instruction to redo
 it, a prior run that failed or was interrupted, a change in the criteria or
 schema itself since the prior run, or a prior output that can't be parsed.
+
+## Rule O5 — A real decision point uses a real gate
