@@ -67,14 +67,38 @@
               "enabled": { "type": "boolean" }
             }
           }
+        },
+        "stageA": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "unitNoun": { "type": "string", "minLength": 1, "description": "What Stage A's unit of work is called, e.g. 'category', 'mandate', 'market thesis'. Optional -- templates fall back to 'category' via {{pipeline.stageA.unitNoun|| \"category\"}} when unset." },
+            "inputNoun": { "type": "string", "minLength": 1, "description": "What the human names to kick off Stage A, e.g. 'category name', 'role/mandate name'. Optional, same fallback pattern as unitNoun." }
+          },
+          "description": "Optional vocabulary for Stage A (category research). Every reference to it in templates/core/*.tmpl uses the {{path|| \"default\"}} fallback syntax, so omitting this object entirely is valid and renders sensible VC-flavored defaults."
         }
       }
     },
     "criteria": {
       "type": "object",
-      "required": ["immediatePass", "tiers", "judgmentSignals", "redFlags", "onMissingData"],
+      "required": ["immediatePass", "tiers", "judgmentSignals", "redFlags", "onMissingData", "stageAQuestions"],
       "additionalProperties": false,
       "properties": {
+        "stageAQuestions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["title", "prompt", "jsonKey"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 1, "description": "Heading rendered in the category-research skill, e.g. 'Competitive dynamics'." },
+              "prompt": { "type": "string", "minLength": 1, "description": "What the skill must answer for this question." },
+              "jsonKey": { "type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_]*$", "description": "snake_case key this answer is written under in the Stage A JSON output." }
+            }
+          },
+          "description": "The required questions Stage A (category-research) must answer before a human can approve it. VC's four (competitive dynamics, customer segmentation, workflow product quality, exit landscape) are the reference set; every vertical defines its own -- there is no shared default."
+        },
         "immediatePass": {
           "type": "array",
           "items": { "$ref": "#/definitions/rule" },
