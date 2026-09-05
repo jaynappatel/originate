@@ -61,3 +61,5 @@ diligence disabled entirely — the platform must not assume diligence is
 always on. **Insurance MGA** shows a non-`PROCEED`/`PASS` verdict vocabulary —
 the platform must not hardcode the verdict set. Full per-vertical detail is
 in `docs/VERTICAL-PLAYBOOKS.md`.
+
+---
