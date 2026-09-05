@@ -47,3 +47,6 @@ merely disabled, for verticals like sales-agency where a stage's concept
 doesn't apply at all.
 
 ## `criteria`
+
+The predicate DSL — see `ARCHITECTURE.md` §4 for why it's intentionally
+small. Four parts:
