@@ -87,3 +87,11 @@ clearly wrong for this market, a connector returning fields the criteria
 don't reference) while they're still cheap to fix.
 
 ## 7. Ongoing edit loop
+
+"Edit my skills" reopens the exact same chat editor from step 3, scoped to
+just this tenant's own `originate.config.json` and `.claude/skills/`
+directory — permanently, not a one-time setup flow. A company refining its
+tier thresholds in month three uses the identical interface as a company
+setting them up on day one. This is also where a company changes its
+`agentRuntime` choice later, adds a vertical-overlay skill it didn't start
+with, or turns `diligence.enabled` on after starting diligence-off.
