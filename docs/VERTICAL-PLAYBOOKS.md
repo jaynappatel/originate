@@ -104,3 +104,17 @@ Tests the platform against a domain with almost no natural-language
 
 Nearly a direct re-skin of the VC/PE diligence pipeline with a different
 Stage A driver and CRM.
+
+- **Entity:** company (acquisition target). **Verdicts:** same shape as
+  VC/PE.
+- **Stage A:** an internal strategic thesis (build-vs-buy, adjacent-market
+  entry) rather than an outside investment thesis — this is the vertical
+  where the "human gate before any spend" matters most politically, since
+  the approver is often a business-unit head who did not initiate the
+  search.
+- **Discovery/scoring/enrichment:** same connector classes as VC/PE.
+- **CRM:** an internal deal-tracking system rather than Affinity.
+- **Diligence:** identical shape to VC/PE (financial/legal/commercial/team),
+  frequently with an added "integration risk" specialist that doesn't exist
+  in the VC vertical at all — a clean example of a vertical *adding* a
+  specialist rather than just reparametrizing the existing eight.
