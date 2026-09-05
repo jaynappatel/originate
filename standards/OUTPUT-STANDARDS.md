@@ -1,0 +1,1 @@
+# OUTPUT-STANDARDS.md (generalized)
