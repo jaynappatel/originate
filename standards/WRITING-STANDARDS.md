@@ -1,6 +1,6 @@
 # WRITING-STANDARDS.md (generalized)
 
-Ported from Topwater's `.claude/skills/WRITING-STANDARDS.md`. These rules
+Ported from an existing production system's `.claude/skills/WRITING-STANDARDS.md`. These rules
 govern every prose output a rendered skill produces: memos, interpretation
 layers, summaries, briefs, extracts, outreach drafts. They sit alongside
 `EVIDENCE-STANDARDS.md` (what may be claimed) and `GROUNDING-RULES.md` (how

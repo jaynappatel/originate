@@ -1,6 +1,6 @@
 # /sync-to-crm
 
-Generalizes Topwater's `/sync-to-affinity` (recorded there as a live
+Generalizes an existing production skill, `/sync-to-affinity` (recorded there as a live
 placeholder — this template exists to keep that same honesty rather than
 paper over it: a connector's write-back capability is either wired and
 tested, or the skill says plainly that it isn't).
@@ -17,7 +17,7 @@ fields that CRM's own schema expects, mapped per that connector's
 
 **If no configured `crm` connector declares `crmWrite`, or the field
 mapping for this tenant's CRM hasn't been finalized, this skill must say so
-explicitly and do nothing** — the same honest-placeholder state Topwater's
+explicitly and do nothing** — the same honest-placeholder state a
 own `sync-to-affinity` is in today (field mappings on the CRM side not yet
 finalized), rather than attempting a partial or best-guess write. A
 half-mapped CRM write is worse than no write: it produces records a human

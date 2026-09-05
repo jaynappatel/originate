@@ -1,6 +1,6 @@
 # /enrich-entities
 
-Generalizes Topwater's `/enrich-companies`. Pulls deeper, usually-paid data
+Generalizes an existing production skill, `/enrich-companies`. Pulls deeper, usually-paid data
 on only the {{vocabulary.entityPlural}} scoring already qualified — never
 on everything discovered.
 
@@ -35,7 +35,7 @@ scoring already ruled out wastes real budget for no possible benefit.
    data: null and flagged, never invented.
 3. Logs every paid call (connector, {{vocabulary.entity}} count, and
    whatever credit/cost unit that connector reports) to a usage ledger —
-   generalizes Topwater's CLAUDE.md Section 6 "log every run" discipline
+   generalizes an existing "log every run" discipline
    and the `budget` block's advisory role in
    `docs/CONFIG-SCHEMA.md`.
 

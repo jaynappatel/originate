@@ -1,7 +1,7 @@
 # EVIDENCE-STANDARDS.md (generalized)
 
-Shared reference for every diligence specialist skill. Ported from
-Topwater's `.claude/skills/EVIDENCE-STANDARDS.md`. The six rules below are
+Shared reference for every diligence specialist skill. Ported from an
+existing production system's `.claude/skills/EVIDENCE-STANDARDS.md`. The six rules below are
 document-analysis discipline and apply unchanged to any vertical's
 diligence pipeline — a lease abstract, a loss-run history, and a reference
 call transcript all need the same citation and confidence discipline a data
@@ -9,7 +9,7 @@ room's financials do. Load this alongside
 `standards/GROUNDING-RULES.md` (the generalized G1-G11) before producing any
 diligence output.
 
-The vertical-specific layer that Topwater's original file bundled in with
+The vertical-specific layer that the original file bundled in with
 these six rules — the thesis-component labels, the fit scorecard, the
 re-rate thesis summary — is **not** part of the shared standard. Those are
 VC/PE-specific analytical frameworks and belong in a vertical overlay's own

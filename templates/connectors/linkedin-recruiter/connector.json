@@ -9,5 +9,5 @@
   },
   "requiredScopes": ["linkedin:recruiter-search"],
   "codexAdapterStatus": "not-yet-ported",
-  "notes": "Candidate sourcing for the recruiting vertical. See docs/CONNECTOR-CATALOG.md's note on Topwater's existing ATS collectors (atsGreenhouseCollector.ts, atsLeverCollector.ts, atsAshbyCollector.ts, atsLoxoCollector.ts, atsCareerspageCollector.ts) as a directly reusable, already-tested source of the same discovery role, distinct from this connector."
+  "notes": "Candidate sourcing for the recruiting vertical. See docs/CONNECTOR-CATALOG.md's note on an existing production system's ATS collectors (atsGreenhouseCollector.ts, atsLeverCollector.ts, atsAshbyCollector.ts, atsLoxoCollector.ts, atsCareerspageCollector.ts) as a directly reusable, already-tested source of the same discovery role, distinct from this connector."
 }

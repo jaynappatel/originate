@@ -12,8 +12,8 @@ Each connector directory under `templates/connectors/<id>/` holds:
 - **`prompt-fragment.md`** — the prose a rendered skill template splices in
   to tell the agent *how* to call this connector's tools correctly (field
   limits, caching rules, what "5 fields only, never more" means for this
-  particular source, etc.) — the connector-specific analog of a Topwater
-  skill's own inline instructions today.
+  particular source, etc.) — the connector-specific analog of a skill's
+  own inline instructions today.
 
 ## The capability contract
 
@@ -29,25 +29,26 @@ Every `connector.json` declares a subset of:
 | `docs` | Can read/list documents in a data room or shared drive |
 
 **There is no `commsSend` flag, anywhere in this catalog, by design.** This
-is what makes Topwater's "nothing sends itself" guarantee structural rather
+is what makes the "nothing sends itself" guarantee structural rather
 than a prompt-level policy: a comms connector that could send would need a
 capability this schema has no name for, so declaring one would fail
 validation, not just violate a convention. If a future connector's
 underlying API technically supports sending, the connector's own
 `connector.json` must not declare a `commsSend`-shaped capability under any
 name — draft-only is enforced at the capability-contract layer, not left to
-the skill prompt's good judgment (the same reasoning Topwater's actual Gmail
+the skill prompt's good judgment (the same reasoning an existing Gmail
 integration already applies: no send tool wired at any layer, not a policy
 the agent is trusted to follow).
 
 ## Starting catalog (this pass)
 
-Ported directly from Topwater's actual integrations, reached via the
-tenant's own Claude.ai/Codex sign-in (native MCP), same as today:
+Ported directly from an existing production system's actual integrations,
+reached via the tenant's own Claude.ai/Codex sign-in (native MCP), same as
+today:
 
 | id | Roles | Notes |
 |---|---|---|
-| `grata` | discovery | Company search/pull. Minimum-field discipline (5 fields only) carried into its `prompt-fragment.md` verbatim from Topwater's CLAUDE.md Section 5. |
+| `grata` | discovery | Company search/pull. Minimum-field discipline (5 fields only) carried into its `prompt-fragment.md` verbatim from the reference system's own output rules. |
 | `affinity` | crmRead, crmWrite | CRM check-before-contact and write-back. |
 | `clay` | enrichment | Paid per-company enrichment, gated to qualifying tiers only. |
 | `gmail` | commsDraft | Draft-only, structurally — see above. |
@@ -66,12 +67,12 @@ treating them as second-class:
 
 ### A note on the recruiting vertical's discovery connectors
 
-Topwater's widget already has ATS collectors —
+An existing production system already has ATS collectors —
 `widget/src/atsGreenhouseCollector.ts`, `atsLeverCollector.ts`,
 `atsAshbyCollector.ts`, `atsLoxoCollector.ts`, `atsCareerspageCollector.ts`,
 plus `atsDetect.ts` to identify which ATS a target uses. These map onto
 Originate's `discovery` connector role directly and near-verbatim for the
-recruiting vertical — they were built for a different purpose in Topwater
+recruiting vertical — they were built for a different purpose there
 (finding hiring signals as a scoring input, not candidate sourcing), but the
 underlying connector code is exactly "pull a list of people/postings from
 this ATS," which is the recruiting vertical's Stage B. Worth flagging as a

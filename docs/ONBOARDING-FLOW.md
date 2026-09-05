@@ -44,8 +44,8 @@ company through the `criteria` schema section by section:
 `onMissingData`. After each section, the wizard shows the generated
 JSON *and* a plain-English restatement, and asks for explicit confirmation
 before moving to the next section — the same "approve before spend"
-philosophy as Topwater's category-research human gate today, applied to
-setup itself rather than only to pipeline runs.
+philosophy as the category-research human gate, applied to setup itself
+rather than only to pipeline runs.
 
 The interview prompt is itself a template
 (`onboarding/interview-prompt.md.tmpl`, not built in this pass — spec only)
@@ -62,7 +62,7 @@ discovery, enrichment, CRM, comms, documents — and let the company pick one
 or none per role (more than one is allowed for `discovery`/`crm`; the
 `criteria`/`connectors` schema doesn't cap it). For each connector chosen,
 walk credential setup checked **at the point it's actually needed**, not
-all up front — this reuses Topwater's own `onboarding.ts` pattern (workspace
+all up front — this reuses an existing `onboarding.ts` pattern (workspace
 and credential checks fire only when a run actually needs them, and clear
 themselves automatically once fixed) rather than a blanket "connect
 everything before you can start" gate.
@@ -74,7 +74,7 @@ this pass) against the finished `originate.config.json`: render each
 `templates/core/*/SKILL.md.tmpl` (plus any vertical-overlay additions) into
 the tenant's real `.claude/skills/*/SKILL.md`, and scaffold the tenant's
 workspace (`sourcing/`, `diligence/` if enabled, `docs/`, `outputs/`)
-matching Topwater's proven O1-O5 output-standards layout (see
+matching the proven O1-O5 output-standards layout (see
 `standards/OUTPUT-STANDARDS.md`).
 
 ## 6. Dry-run
@@ -98,7 +98,7 @@ with, or turns `diligence.enabled` on after starting diligence-off.
 
 ## 8. Permission policy setup
 
-Carry over Topwater's point-of-use approval-gate model unmodified: an
+Carry over a point-of-use approval-gate model unmodified: an
 always-allow list for low-risk, repeatable actions, and a hard-coded
 always-ask list that can never be marked always-allow — `rm -rf`,
 `git push`, `sudo`, and (new, generalized) any draft/"send" action on

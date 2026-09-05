@@ -1,11 +1,12 @@
 # OUTPUT-STANDARDS.md (generalized)
 
 Shared reference for every rendered skill that writes into an `outputs/`
-directory. Ported from Topwater's own `.claude/skills/OUTPUT-STANDARDS.md`
-(O1-O5), generalized only where it referenced "company" specifically or
-Topwater's own tooling by name — the mechanisms are unchanged, because
-Topwater's own incident history is what proved they were necessary, and
-none of that history is VC-specific. `{{vocabulary.entity}}` below is a
+directory. Ported from an existing production system's own
+`.claude/skills/OUTPUT-STANDARDS.md` (O1-O5), generalized only where it
+referenced "company" specifically or that system's own tooling by name —
+the mechanisms are unchanged, because a real incident history is what
+proved they were necessary, and none of that history is VC-specific.
+`{{vocabulary.entity}}` below is a
 template placeholder resolved from `originate.config.json`; the rest of
 this file is the invariant a rendered skill inherits regardless of
 vertical.
@@ -21,7 +22,7 @@ Before saving anything, compute a run folder:
 ```
 
 `<base>` is the bucket this run belongs to, never a single flat `outputs/`
-for everything — a flat bucket is what let Topwater's own `outputs/`
+for everything — a flat bucket is what let one production system's `outputs/`
 directory reach 788 mixed entries before this rule existed. Buckets:
 
 | `<base>` | For |
@@ -100,7 +101,7 @@ counts.
 **This is not optional and has no age limit.** It exists because a system
 without it will eventually re-run a fully-covered batch to exhaustion
 before reaching the small number of genuinely new items in it — this
-happened concretely in Topwater's own history (a category rerun that
+happened concretely in one production system's own history (a category rerun that
 re-scored 339 already-scored companies and died before reaching the 3 new
 ones). A connector being unavailable is never grounds for skipping this
 rule; it's the strongest argument for reusing what's already on disk. Four

@@ -2,8 +2,8 @@
 
 ## 1. What this is generalizing, and why
 
-`~/Desktop/topwater-workflows` is a working Electron menu-bar app ("Topwater")
-that dispatches Claude Code skills to run:
+An existing production system — a working Electron menu-bar app — already
+dispatches Claude Code skills to run:
 
 - a 5-stage sourcing pipeline — category research → company discovery →
   scoring → enrichment → personalized outreach — with a human-approval gate
@@ -26,8 +26,8 @@ rubric is duplicated across `CLAUDE.md` prose, `scoringRubric.ts`, and
 (`scoringRubricSkillSync.test.ts`); the connectors are Grata/Affinity/Clay/
 Gmail specifically; the vocabulary is "company/ARR/founder"; onboarding
 (`onboarding.ts`) checks one person's Claude Code login and one workspace
-folder. All of that is Topwater Capital's own configuration wearing the
-engine, not the engine itself.
+folder. All of that is one company's own configuration wearing the engine,
+not the engine itself.
 
 Originate is the engine, with that configuration promoted to a first-class,
 swappable input — `originate.config.json` (§4) — and the fixed skill files
@@ -45,7 +45,7 @@ Every archetype below reduces to the same pipeline. What changes is
 *vocabulary*, *criteria*, and *which connectors fill which stage role* — never
 the pipeline shape itself.
 
-| Stage | VC (Topwater today) | Recruiting | Real Estate Acquisition | Corp Dev / M&A | Sales Agency (BDR) | Insurance MGA |
+| Stage | VC (reference system today) | Recruiting | Real Estate Acquisition | Corp Dev / M&A | Sales Agency (BDR) | Insurance MGA |
 |---|---|---|---|---|---|---|
 | **A. Thesis** (human-approved before spend) | category research | role/mandate spec | market + asset-class thesis | acquisition thesis | ICP definition | risk appetite |
 | **B. Discovery** (cached, broad, cheap) | Grata company pull | candidate sourcing (LinkedIn/ATS) | listings (CoStar/LoopNet/Crexi) | market scan (Grata/PitchBook) | prospect lists (Apollo/ZoomInfo) | submission intake queue |
@@ -80,7 +80,7 @@ implementation doesn't quietly drop one.
   is durable immediately, not held to the end of the run); chain-level step
   resume (a multi-skill run records exactly which step it's on); a pre-run
   duplicate-work guard (never redo an identical input that already produced
-  a finished result). Topwater's own incident history (a rerun that
+  a finished result). A real incident in the reference system (a rerun that
   re-researched 339 already-scored companies and died before reaching the 3
   new ones) is exactly the failure mode this defends against, and it isn't
   vertical-specific.
@@ -100,8 +100,8 @@ implementation doesn't quietly drop one.
   identify the document before analyzing it, date arithmetic runs in code,
   decompose blended averages, restating never widens scope) — see
   `standards/GROUNDING-RULES.md`. These are document-analysis discipline,
-  not VC-specific; the one Topwater-specific piece (thesis-component tags,
-  the fit scorecard, the re-rate thesis summary) is pulled into the *vertical
+  not VC-specific; the VC-specific piece (thesis-component tags, the fit
+  scorecard, the re-rate thesis summary) is pulled into the *vertical
   overlay*, not the shared rule set.
 - **Output/evidence/writing conventions** — the run-folder-per-run
   convention, the guaranteed-PDF rule, the reuse-before-redo rule, the
@@ -147,20 +147,19 @@ Annotated walkthrough: `docs/CONFIG-SCHEMA.md`. Shape:
 Hard numeric gates (`field`/`op`/`value`) compile to one deterministic
 function; soft, qualitative signals (`judgmentSignals`) render into one
 prompt fragment for the scoring skill's holistic judgment. Both come from
-this **one** list, so there's nothing left to fall out of sync the way
-Topwater's three-way duplication can. This is deliberately the *only* place
-config becomes "logic" rather than data — everything else in the schema is
-inert configuration a template reads.
+this **one** list, so there's nothing left to fall out of sync the way a
+three-way duplication can. This is deliberately the *only* place config
+becomes "logic" rather than data — everything else in the schema is inert
+configuration a template reads.
 
-Worth being honest about a real precedent here: Topwater's own team already
-evaluated and explicitly rejected building a general filter/rules DSL, as
-overkill *at single-tenant scale* (recorded in
-`docs/topwater-master/manifest.json`'s `rejectedCapabilities`, re: the
-Analyst Workspace filter engine). This plan revisits that call because
-multi-tenant genericity is now the actual requirement it wasn't for
-single-tenant Topwater — and it keeps the DSL intentionally narrow
-(comparisons + weighted soft signals, no arbitrary logic, no user-defined
-functions) specifically so it doesn't reopen the scope that was rejected.
+Worth being honest about a real precedent here: the reference system's own
+team had already evaluated and explicitly rejected building a general
+filter/rules DSL, as overkill *at single-tenant scale*, for an analogous
+workspace filter engine. This plan revisits that call because multi-tenant
+genericity is now the actual requirement it wasn't for a single-tenant
+system — and it keeps the DSL intentionally narrow (comparisons + weighted
+soft signals, no arbitrary logic, no user-defined functions) specifically so
+it doesn't reopen the scope that was rejected.
 
 ---
 
@@ -195,20 +194,21 @@ templates/
 
 ### Worked example: rendering `category-research` for the VC vertical
 
-Topwater's real `category-research/SKILL.md` hardcodes: "Topwater-relevant
-target," "the deal lead," "the 8-10x revenue re-rating target from CLAUDE.md
-Section 8," and a fixed JSON schema keyed on `category`/`ideal_company_profile`.
-The template (`templates/core/category-research/SKILL.md.tmpl`) replaces
-those with `{{org.name}}`-relevant target," `{{org.approverTitle}}` (default
-"deal lead"), and a guard that only mentions a re-rating multiple if
+The reference system's real `category-research/SKILL.md` hardcodes: a fixed
+firm-relevant target description, "the deal lead," a specific revenue
+re-rating multiple, and a fixed JSON schema keyed on
+`category`/`ideal_company_profile`. The template
+(`templates/core/category-research/SKILL.md.tmpl`) replaces those with
+`{{org.name}}`-relevant target, `{{org.approverTitle}}` (default "deal
+lead"), and a guard that only mentions a re-rating multiple if
 `{{org.thesisMultiple}}` is set in config — for verticals with no comparable
 concept, that whole caveat paragraph is omitted, not blanked out. Rendered
 against the VC starter config (`templates/verticals/vc/config.starter.json`),
-the output is line-for-line equivalent to Topwater's real skill file, modulo
-`{{org.name}}` → "Topwater" and `{{org.approverTitle}}` → "deal lead." That
-equivalence is the test for whether a template generalized correctly: if
-rendering it against the VC starter config doesn't reproduce Topwater's
-actual skill, the template dropped something real.
+the output is line-for-line equivalent to that original skill file, modulo
+`{{org.name}}` resolving to the tenant's own name and `{{org.approverTitle}}`
+→ "deal lead." That equivalence is the test for whether a template
+generalized correctly: if rendering it against the VC starter config doesn't
+reproduce the original skill, the template dropped something real.
 
 ---
 
@@ -245,13 +245,13 @@ design; a comms connector can only ever draft.
 
 ## 8. Deployment model
 
-Local-first, per-company installs — the same trust model as Topwater's
-widget today. Each company runs its own instance, using their own Claude
-Code/Codex login and their own connected data sources; nothing is shared
-across tenants, and no hosted control plane holds anyone's credentials or
-data. This preserves the concrete guarantee Topwater already earned: a
-company's sourcing/diligence data never leaves their own machine or their
-own account.
+Local-first, per-company installs — the same trust model the reference
+system already proved. Each company runs its own instance, using their own
+Claude Code/Codex login and their own connected data sources; nothing is
+shared across tenants, and no hosted control plane holds anyone's
+credentials or data. This preserves the concrete guarantee already earned
+elsewhere: a company's sourcing/diligence data never leaves their own
+machine or their own account.
 
 ---
 

@@ -1,6 +1,6 @@
 # /draft-outreach
 
-Generalizes Topwater's `/draft-outreach` and `/draft-email`. Produces a
+Generalizes existing production skills, `/draft-outreach` and `/draft-email`. Produces a
 personalized outreach draft for each cleared {{vocabulary.entity}} — and
 only ever a draft.
 
@@ -31,7 +31,7 @@ doing any drafting work.
 Draft in the voice specified for this batch, chosen from
 `org.voiceProfiles`. Which profile is used is determined by whoever the
 run specifies (or a single configured default when `org.voiceProfiles` has
-exactly one entry) — this is enforced the same way Topwater's
+exactly one entry) — this is enforced the same way a
 `SenderVoice` type enforces it in code today: a wrong voice on a real draft
 is not a prompt-following failure to shrug off, it's a person's name
 attached to words they didn't write.
@@ -44,7 +44,7 @@ attached to words they didn't write.
    whatever research/enrichment fields are available for it — specific to
    this {{vocabulary.entity}}, never a templated paragraph that could apply
    to any {{vocabulary.entity}} in the batch (the same "no generic AI
-   language" discipline Topwater's CLAUDE.md Section 5 states for research
+   language" discipline stated for research
    prose applies here to outreach copy).
 2. Create the draft via the configured `comms` connector's `commsDraft`
    capability ({{connectors.comms}}) **only** — there is no send capability

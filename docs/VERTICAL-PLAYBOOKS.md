@@ -13,7 +13,7 @@ Every playbook below is a starting point a company edits during onboarding
 
 ## 1. Venture Capital (reference vertical)
 
-**Config:** `templates/verticals/vc/config.starter.json` — Topwater Capital's
+**Config:** `templates/verticals/vc/config.starter.json` — an example firm's
 own criteria, re-expressed in the new schema. This is the vertical every core
 template is validated against (§5 of `ARCHITECTURE.md`).
 
@@ -53,7 +53,7 @@ noun actually generalizes.
   experience, reporting line, location constraints — approved by the hiring
   lead before sourcing spends any time.
 - **Stage B (discovery):** LinkedIn Recruiter, an ATS's own candidate
-  database, or a careers-page/ATS collector pattern (Topwater's widget
+  database, or a careers-page/ATS collector pattern (a reference system
   already has `atsGreenhouseCollector.ts`, `atsLeverCollector.ts`,
   `atsAshbyCollector.ts`, `atsLoxoCollector.ts` — these map directly onto
   Originate's `discovery` connector role for this vertical, ported near
@@ -70,8 +70,8 @@ noun actually generalizes.
 - **Diligence, reframed:** reference checks and background verification —
   locked "folders" become a locked set of reference-call notes and
   background-check documents, read by one specialist each, ending in a
-  hire/no-hire recommendation memo. Same folder-locking discipline as
-  Topwater's data-room specialists (a reference-checker never reads the
+  hire/no-hire recommendation memo. Same folder-locking discipline as any
+  data-room specialist (a reference-checker never reads the
   compensation-negotiation notes), just a different kind of document.
 
 ## 4. Real Estate Acquisition

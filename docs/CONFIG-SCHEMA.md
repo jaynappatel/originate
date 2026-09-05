@@ -2,14 +2,14 @@
 
 The full, validatable schema is `schema/originate.config.schema.json`. This
 document explains each section's intent and the design decisions behind it.
-See `docs/ARCHITECTURE.md` §4 for why this file exists (it replaces
-Topwater's CLAUDE.md-prose + `scoringRubric.ts` + SKILL.md-prose
-triplication) and `docs/VERTICAL-PLAYBOOKS.md` for worked examples across
+See `docs/ARCHITECTURE.md` §4 for why this file exists (it replaces the
+CLAUDE.md-prose + `scoringRubric.ts` + SKILL.md-prose triplication of the
+system this generalizes) and `docs/VERTICAL-PLAYBOOKS.md` for worked examples across
 seven archetypes.
 
 ## `org`
 
-Identity and voice. `voiceProfiles` generalizes Topwater's `SenderVoice`
+Identity and voice. `voiceProfiles` generalizes a `SenderVoice`-style
 pattern (`.claude/skills/draft-email/SKILL.md`, mechanically enforced in
 `widget/src/` today) — a list rather than three hardcoded names, so a
 one-partner shop and a twelve-recruiter agency both fit the same field.
@@ -35,12 +35,12 @@ no fixed length or fixed words — `docs/VERTICAL-PLAYBOOKS.md` #7 (insurance
 MGA) uses `["BIND", "DECLINE", "REFER"]`; VC uses four values including
 `PROCEED_WITH_GAPS`. The diligence-memo template enforces that its final
 line is exactly one of this list's values — enforced mechanically, the same
-way Topwater's memo enforces PROCEED/PASS/etc. today, just reading the list
+way a memo enforces PROCEED/PASS/etc. today, just reading the list
 from config instead of a hardcoded string check.
 
 ## `pipeline.stages`
 
-Directly generalizes Topwater's `widget/skills.config.json` — an ordered,
+Directly generalizes the reference system's `widget/skills.config.json` — an ordered,
 enable/disable list per stage. The one addition: any stage (most notably
 every entry under `diligence`, see below) can be entirely absent rather than
 merely disabled, for verticals like sales-agency where a stage's concept
@@ -68,7 +68,8 @@ small. Five parts:
   are the reference set — every vertical defines its own from scratch, there
   is no shared default list.
 - **`immediatePass`** — hard stop-and-pass rules, checked first, before any
-  other work (generalizes Topwater's Section 2 "Immediate Pass Criteria").
+  other work (generalizes an "Immediate Pass Criteria" section common to
+  this kind of screening).
 - **`tiers`** — ordered list of `{name, rules[]}`; a candidate/company/
   property matches the first tier (in list order) whose rules all pass.
   Each rule is `{field, op, value}` where `op` is one of `eq`, `ne`, `lt`,
@@ -78,8 +79,8 @@ small. Five parts:
   the allowed fields are exactly whatever this tenant's connectors produce.
 - **`judgmentSignals`** — `{signal, direction: positive|negative}` pairs
   with no `value` — these render into the scoring skill's prompt as
-  qualitative signals for holistic judgment (Topwater's "Additional scoring
-  signals" and "Red flags" sections, unified into one shape with a
+  qualitative signals for holistic judgment (generalizes an "Additional
+  scoring signals" and "Red flags" pattern, unified into one shape with a
   direction flag instead of two separately-formatted lists).
 - **`redFlags`** — like `judgmentSignals` but always negative and carrying
   an `escalateTo` field (who gets notified, never a silent auto-pass) —
@@ -87,7 +88,7 @@ small. Five parts:
   escalation, not scoring weight.
 - **`onMissingData`** — a single policy string (default and only currently
   specified value: `"null-and-flag"` — never guess, never screen out for a
-  missing field, set null and flag it, generalizing Topwater's CLAUDE.md
+  missing field, set null and flag it, generalizing the reference system's
   rule verbatim).
 
 ## `connectors`
@@ -111,17 +112,17 @@ ordered list of `{id, folder, question?, sharedFolderOk?, sharedFolderReason?}`;
 the generator instantiates
 `templates/core/diligence-specialist/SKILL.md.tmpl` once per entry, each
 locked to reading only its own named folder (`sharedFolderOk` allows the
-documented Topwater exception where two specialists share a folder but ask
+documented exception where two specialists share a folder but ask
 different questions — e.g. AI-opportunity and product-diligence both
 reading `product/` — and `sharedFolderReason` states which folder and why,
 required whenever `sharedFolderOk` is true).
 
 ## `budget`
 
-Generalizes Topwater's Section 6 token/credit budget note. Advisory only —
-nothing in this schema enforces spend; it exists so a rendered skill can
-state the budget context in its own prose the way Topwater's skills do
-today ("pull broad with minimum fields, score before enriching").
+Generalizes a token/credit budget note common to this kind of pipeline.
+Advisory only — nothing in this schema enforces spend; it exists so a
+rendered skill can state the budget context in its own prose ("pull broad
+with minimum fields, score before enriching").
 
 ## `agentRuntime`
 

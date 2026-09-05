@@ -5,7 +5,7 @@
   "capabilities": { "discovery": false, "enrichment": false, "crmRead": false, "crmWrite": false, "commsDraft": true, "docs": false },
   "auth": {
     "mode": "native-mcp",
-    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today."
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as an existing production system today."
   },
   "requiredScopes": ["gmail:draft-create"],
   "codexAdapterStatus": "not-yet-ported",
