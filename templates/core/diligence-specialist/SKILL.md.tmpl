@@ -1,1 +1,7 @@
 # /diligence-specialist — {{specialist.id}}
+
+Instantiated once per entry in `originate.config.json`'s
+`diligence.specialists` list. This file is `diligence-specialist`, not
+`diligence-{{specialist.id}}` — the generator renders one concrete
+`.claude/skills/{{specialist.id}}/SKILL.md` per specialist entry from this
+same template, substituting each entry's own `folder` and `question`.
