@@ -97,3 +97,13 @@ setting them up on day one. This is also where a company changes its
 with, or turns `diligence.enabled` on after starting diligence-off.
 
 ## 8. Permission policy setup
+
+Carry over Topwater's point-of-use approval-gate model unmodified: an
+always-allow list for low-risk, repeatable actions, and a hard-coded
+always-ask list that can never be marked always-allow — `rm -rf`,
+`git push`, `sudo`, and (new, generalized) any draft/"send" action on
+whichever `comms` connector this tenant configured. This step is not
+optional and not skippable during onboarding; a tenant cannot reach step 6
+(dry-run) without an explicit permission policy in place, because a dry-run
+that touches an external connector is exactly the kind of action the gate
+exists to catch.
