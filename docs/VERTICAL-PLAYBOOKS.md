@@ -78,3 +78,24 @@ noun actually generalizes.
 
 Tests the platform against a domain with almost no natural-language
 "category research" step and a much heavier discovery volume.
+
+- **Entity:** property (or portfolio). **Verdicts:** PURSUE / PASS / HOLD_FOR_REVIEW.
+- **Stage A (thesis):** market + asset-class definition ("multifamily,
+  Sunbelt metros, value-add, 100+ units") rather than an open-ended category
+  brief — this vertical's thesis interview is mostly structured fields, not
+  free text, and the onboarding wizard should let a thesis skip straight to
+  the criteria interview without a category-research-style narrative step.
+- **Stage B (discovery):** CoStar, LoopNet, Crexi listing pulls — much
+  higher volume, much shorter per-item research than a VC company profile.
+- **Stage C (scoring):** cap rate, price-per-unit, NOI, and occupancy
+  thresholds as hard gates; submarket trajectory and deferred-maintenance
+  signals as judgment.
+- **Stage D (enrichment):** comps, zoning records, tax history, environmental
+  flags.
+- **Stage E (outreach):** broker or owner outreach — letter of intent
+  language, not a partner-voice email; still draft-only.
+- **Diligence, reframed:** title review, environmental (Phase I/II) review,
+  lease abstraction — each a locked folder, each read by one specialist,
+  ending in a go/no-go memo. The grounding rules generalize directly (date
+  arithmetic in code applies just as much to a lease-expiry calculation as
+  a contract-notice deadline).
