@@ -14,3 +14,5 @@ the worked example — but the pipeline underneath is vertical-agnostic. See
 `docs/VERTICAL-PLAYBOOKS.md` for how the same five stages map onto recruiting,
 real estate acquisition, corp dev, sales development, and insurance
 underwriting.
+
+## Why this exists
