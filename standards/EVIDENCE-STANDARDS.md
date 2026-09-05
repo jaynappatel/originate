@@ -61,3 +61,5 @@ Every finding is tagged High, Medium, or Low with the reason:
 
 Tag every number, risk flag, and summary finding — never general contextual
 statements.
+
+### Rule 5 — Two-layer separation
