@@ -161,3 +161,5 @@ multi-tenant genericity is now the actual requirement it wasn't for
 single-tenant Topwater — and it keeps the DSL intentionally narrow
 (comparisons + weighted soft signals, no arbitrary logic, no user-defined
 functions) specifically so it doesn't reopen the scope that was rejected.
+
+---
