@@ -1,0 +1,13 @@
+{
+  "id": "costar",
+  "displayName": "CoStar",
+  "roles": ["discovery", "enrichment"],
+  "capabilities": { "discovery": true, "enrichment": true, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "api-key",
+    "notes": "No native Claude.ai/Codex connector as of this scaffold -- stored as a tenant-scoped API key in the local config store, checked at point of need."
+  },
+  "requiredScopes": ["costar:listing-search", "costar:comps-read"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Listing discovery plus comps/zoning/tax enrichment for the real-estate vertical, from one source -- unlike most verticals, discovery and enrichment can be the same connector call here."
+}
