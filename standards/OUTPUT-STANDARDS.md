@@ -15,3 +15,7 @@ vertical.
 ## Rule O1 — One subject-labelled folder per run
 
 Before saving anything, compute a run folder:
+
+```
+<base>/<subject>-<skill>-<YYYY-MM-DD>-<HHMM>/
+```
