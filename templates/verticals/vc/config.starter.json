@@ -1,0 +1,109 @@
+{
+  "org": {
+    "name": "Topwater Capital",
+    "approverTitle": "deal lead",
+    "thesisMultiple": "8-10x revenue re-rating target",
+    "voiceProfiles": [
+      { "id": "jim", "styleNotes": "Direct, short sentences, leads with the number that matters." },
+      { "id": "miguel", "styleNotes": "Warm but concrete, always names a specific detail about the company." },
+      { "id": "jayna", "styleNotes": "Founder-to-founder tone, references the product's workflow specifically." }
+    ]
+  },
+  "vertical": "vc",
+  "vocabulary": {
+    "entity": "company",
+    "entityPlural": "companies",
+    "verdicts": ["PROCEED", "PROCEED_WITH_GAPS", "PASS", "NEEDS_MORE_INFO"]
+  },
+  "pipeline": {
+    "stages": [
+      { "id": "category-research", "order": 10, "enabled": true },
+      { "id": "discover-entities", "order": 15, "enabled": true },
+      { "id": "check-crm-history", "order": 18, "enabled": true },
+      { "id": "score-entities", "order": 20, "enabled": true },
+      { "id": "enrich-entities", "order": 30, "enabled": true },
+      { "id": "draft-outreach", "order": 35, "enabled": true },
+      { "id": "sync-to-crm", "order": 40, "enabled": true }
+    ]
+  },
+  "criteria": {
+    "immediatePass": [
+      { "field": "yearsSinceLastRaise", "op": "lte", "value": 2 },
+      { "field": "totalFundingRaised", "op": "gt", "value": 10000000 },
+      { "field": "primaryCustomerSegment", "op": "eq", "value": "government" }
+    ],
+    "tiers": [
+      {
+        "name": "Tier 1",
+        "rules": [
+          { "field": "arr", "op": "gte", "value": 5000000 },
+          { "field": "customerSegment", "op": "in", "value": ["smb", "mid-market"] },
+          { "field": "bootstrapped", "op": "eq", "value": true }
+        ]
+      },
+      {
+        "name": "Tier 2",
+        "rules": [
+          { "field": "arr", "op": "gte", "value": 3000000 },
+          { "field": "customerSegment", "op": "in", "value": ["smb", "mid-market"] },
+          { "field": "totalFundingRaised", "op": "lt", "value": 10000000 },
+          { "field": "yearsSinceLastRaise", "op": "gt", "value": 3 }
+        ]
+      },
+      {
+        "name": "Tier 3",
+        "rules": [
+          { "field": "arr", "op": "lt", "value": 3000000 },
+          { "field": "customerSegment", "op": "eq", "value": "enterprise" }
+        ]
+      }
+    ],
+    "judgmentSignals": [
+      { "signal": "founder has domain background, built the product to solve their own problem", "direction": "positive" },
+      { "signal": "20%+ YoY growth", "direction": "positive" },
+      { "signal": "85%+ gross retention", "direction": "positive" },
+      { "signal": "breakeven or profitable, high cash flow quality", "direction": "positive" },
+      { "signal": "10-80 employees", "direction": "positive" },
+      { "signal": "founders own at least 50% of the company", "direction": "positive" },
+      { "signal": "non-institutional prior investors", "direction": "positive" },
+      { "signal": "founded since 2015", "direction": "positive" },
+      { "signal": "North America HQ", "direction": "positive" },
+      { "signal": "primary distribution is direct, not via channel", "direction": "positive" },
+      { "signal": "product is a daily-use system of record, not a reporting layer", "direction": "positive" },
+      { "signal": "multi-party data exchange, platform serves more than one stakeholder type", "direction": "positive" },
+      { "signal": "regulatory or compliance complexity in the workflow", "direction": "positive" }
+    ],
+    "redFlags": [
+      { "signal": "customer concentration", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "any churn signals", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "bad product or customer service signals from review sites", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "tech debt signals", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "platform dependency on a single counterparty API or marketplace", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "channel concentration, all leads from one referral partner", "direction": "negative", "escalateTo": "deal-team" },
+      { "signal": "market too crowded or too niche to support a platform thesis", "direction": "negative", "escalateTo": "deal-team" }
+    ],
+    "onMissingData": "null-and-flag"
+  },
+  "connectors": {
+    "discovery": ["grata"],
+    "enrichment": ["clay"],
+    "crm": ["affinity"],
+    "comms": ["gmail"],
+    "documentStore": ["google-drive"]
+  },
+  "diligence": {
+    "enabled": true,
+    "specialists": [
+      { "id": "financial-analysis", "folder": "financials", "question": "Revenue quality, margin structure, and cash flow durability." },
+      { "id": "commercial-analysis", "folder": "commercial", "question": "Overall commercial health: pipeline, pricing, customer mix." },
+      { "id": "customer-contracts", "folder": "commercial", "sharedFolderOk": true, "sharedFolderReason": "commercial (contract-specific detail, a different question than commercial-analysis)", "question": "Contract-specific terms: term length, exclusivity, assignment, termination." },
+      { "id": "team-analysis", "folder": "team", "question": "Founder and team composition, key-person risk, bench depth." },
+      { "id": "product-diligence", "folder": "product", "question": "Product depth, technical debt, roadmap credibility." },
+      { "id": "ai-opportunity", "folder": "product", "sharedFolderOk": true, "sharedFolderReason": "product (also glances at commercial materials per its own scope, since AI capability claims often surface in sales decks first)", "question": "Where AI can extend or automate the existing product, not just what already exists." },
+      { "id": "gtm-analysis", "folder": "gtm", "question": "Go-to-market motion, CAC, channel concentration." },
+      { "id": "market-analysis", "folder": "market", "question": "Market structure, competitive dynamics, exit landscape." }
+    ]
+  },
+  "budget": { "creditsPerYear": 86000, "seats": 2 },
+  "agentRuntime": { "primary": "claude-code", "skillEditing": "both" }
+}
