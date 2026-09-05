@@ -39,3 +39,9 @@ way Topwater's memo enforces PROCEED/PASS/etc. today, just reading the list
 from config instead of a hardcoded string check.
 
 ## `pipeline.stages`
+
+Directly generalizes Topwater's `widget/skills.config.json` — an ordered,
+enable/disable list per stage. The one addition: any stage (most notably
+every entry under `diligence`, see below) can be entirely absent rather than
+merely disabled, for verticals like sales-agency where a stage's concept
+doesn't apply at all.
