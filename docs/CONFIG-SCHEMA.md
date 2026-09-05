@@ -99,3 +99,5 @@ documented Topwater exception where two specialists share a folder but ask
 different questions — e.g. AI-opportunity and product-diligence both
 reading `product/` — and `sharedFolderReason` states which folder and why,
 required whenever `sharedFolderOk` is true).
+
+## `budget`
