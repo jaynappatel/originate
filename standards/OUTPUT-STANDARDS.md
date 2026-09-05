@@ -62,3 +62,13 @@ claim against the same `(entity, claim_type, period)` can be marked NEW,
 AGREE, or CONFLICT against what's already there.
 
 ## Rule O2 — Guaranteed PDF, every run, no exceptions
+
+Wherever a skill's primary output is prose (a memo, brief, report — not a
+bare JSON blob), render a PDF copy into the same run folder immediately
+after saving the source. This runs unconditionally; there is no
+JSON-only exception and no user opt-out at the O2 layer. A skill whose
+native output is structured JSON writes a readable prose companion first
+(a brief, a ranked-list table, an `-interpretation.md`) and renders that —
+the JSON is still written for downstream skills to parse, but the PDF is
+the human deliverable, never replaced by it. If PDF rendering fails, say so
+plainly in the run's final status rather than silently moving on.
