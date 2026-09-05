@@ -49,3 +49,10 @@ tenant's vertical overlay:
    operating on a user's files.
 
 ### `originate validate`
+
+Validates `originate.config.json` against the schema, and additionally
+checks: every `connectors.*` entry names a real id from
+`templates/connectors/`; every `diligence.specialists[].folder` is unique
+unless paired with `sharedFolderOk: true`; every `vocabulary.verdicts`
+entry is uppercase-with-underscores (matching what `diligence-memo`'s
+mechanical verdict check expects).
