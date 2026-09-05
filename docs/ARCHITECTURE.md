@@ -194,3 +194,18 @@ templates/
 ```
 
 ### Worked example: rendering `category-research` for the VC vertical
+
+Topwater's real `category-research/SKILL.md` hardcodes: "Topwater-relevant
+target," "the deal lead," "the 8-10x revenue re-rating target from CLAUDE.md
+Section 8," and a fixed JSON schema keyed on `category`/`ideal_company_profile`.
+The template (`templates/core/category-research/SKILL.md.tmpl`) replaces
+those with `{{org.name}}`-relevant target," `{{org.approverTitle}}` (default
+"deal lead"), and a guard that only mentions a re-rating multiple if
+`{{org.thesisMultiple}}` is set in config — for verticals with no comparable
+concept, that whole caveat paragraph is omitted, not blanked out. Rendered
+against the VC starter config (`templates/verticals/vc/config.starter.json`),
+the output is line-for-line equivalent to Topwater's real skill file, modulo
+`{{org.name}}` → "Topwater" and `{{org.approverTitle}}` → "deal lead." That
+equivalence is the test for whether a template generalized correctly: if
+rendering it against the VC starter config doesn't reproduce Topwater's
+actual skill, the template dropped something real.
