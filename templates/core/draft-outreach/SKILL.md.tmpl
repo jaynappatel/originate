@@ -27,3 +27,11 @@ doing any drafting work.
 ---
 
 ## Voice
+
+Draft in the voice specified for this batch, chosen from
+`org.voiceProfiles`. Which profile is used is determined by whoever the
+run specifies (or a single configured default when `org.voiceProfiles` has
+exactly one entry) — this is enforced the same way Topwater's
+`SenderVoice` type enforces it in code today: a wrong voice on a real draft
+is not a prompt-following failure to shrug off, it's a person's name
+attached to words they didn't write.
