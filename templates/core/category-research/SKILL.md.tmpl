@@ -110,3 +110,21 @@ When running with file write access, additionally write the same content
 as structured JSON to the saved file (never in the visible response) —
 this is what the discovery stage parses, so every field must be populated
 and must state the same facts as the prose:
+
+```json
+{
+  "{{pipeline.stageA.unitNoun|| "category"}}": "",
+  "subcategories": [
+    {
+      "name": "",
+      "in_scope": true,
+      "characteristics": [],
+      "example_{{vocabulary.entityPlural}}": [
+        { "name": "", "identifier": "", "why_it_fits": "" }
+      ]
+    }
+  ],
+  {{#each criteria.stageAQuestions}}"{{this.jsonKey}}": "",
+  {{/each}}"ideal_{{vocabulary.entity}}_profile": ""
+}
+```
