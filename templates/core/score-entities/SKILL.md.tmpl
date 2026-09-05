@@ -27,3 +27,27 @@ interrupt without losing finished work.
 ---
 
 ## Scoring logic — compiled from `criteria`, not hand-written per tenant
+
+1. **Immediate pass.** Check every rule in `criteria.immediatePass` first,
+   before anything else. Any match means an immediate PASS for this
+   {{vocabulary.entity}} — do not evaluate tiers, do not spend any further
+   research on it.
+2. **Tiers.** Evaluate `criteria.tiers` in list order. A
+   {{vocabulary.entity}} matches the **first** tier whose `rules` all
+   evaluate true against this {{vocabulary.entity}}'s known fields. A
+   {{vocabulary.entity}} matching no tier is an outright pass, or the
+   lowest-priority tier if the config defines one for that purpose.
+3. **Judgment signals.** For `criteria.judgmentSignals`, apply holistic
+   judgment — these are not hard gates, they inform which
+   {{vocabulary.entityPlural}} within a tier are worth prioritizing first
+   inside that tier, and they get stated explicitly in the output's
+   rationale field, not silently folded into a score.
+4. **Red flags.** For any `criteria.redFlags` signal present, do not
+   auto-pass the {{vocabulary.entity}} — flag it explicitly and note the
+   configured `escalateTo` target in the output. A red flag changes what
+   gets surfaced to a human; it never silently changes the tier.
+5. **Missing data.** Per `criteria.onMissingData` (default
+   `null-and-flag`): never guess a missing field's value and never screen a
+   {{vocabulary.entity}} out solely because a field is missing — set it
+   null, flag it, and continue evaluating everything that can still be
+   evaluated.
