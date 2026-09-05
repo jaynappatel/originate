@@ -73,3 +73,9 @@ wants to check a number reads the extraction layer, and one who wants the
 analyst's read reads the interpretation layer.
 
 ### Rule 6 — Gap ledger
+
+Every run produces an explicit open-items list at the end: what's missing,
+why it matters, what confidence impact it has, and where to get it. This
+feeds follow-up questions directly, and every Low-confidence finding should
+have a corresponding gap-ledger entry naming what document would resolve
+it.
