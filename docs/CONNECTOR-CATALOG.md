@@ -41,3 +41,6 @@ integration already applies: no send tool wired at any layer, not a policy
 the agent is trusted to follow).
 
 ## Starting catalog (this pass)
+
+Ported directly from Topwater's actual integrations, reached via the
+tenant's own Claude.ai/Codex sign-in (native MCP), same as today:
