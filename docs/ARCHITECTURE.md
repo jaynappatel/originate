@@ -252,3 +252,5 @@ across tenants, and no hosted control plane holds anyone's credentials or
 data. This preserves the concrete guarantee Topwater already earned: a
 company's sourcing/diligence data never leaves their own machine or their
 own account.
+
+---
