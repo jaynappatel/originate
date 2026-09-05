@@ -123,3 +123,6 @@ Every point where more work might follow is one of exactly two kinds:
   actual interactive mechanism and stop until it returns. Writing the
   question as plain response text and proceeding regardless is not a gate;
   it's decoration that looks like one.
+
+A skill's own instructions must state explicitly, at every apparent
+decision point, which of the two kinds it is.
