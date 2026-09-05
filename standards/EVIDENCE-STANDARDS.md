@@ -29,3 +29,5 @@ Every material claim, number, or risk flag carries a source pointer:
 `[document name, page/tab, location description]`. If a value was computed
 from source data, cite the inputs' locations, not just the result.
 Uncited claims are not allowed — if it can't be cited, don't state it.
+
+### Rule 2 — Grounding rule
