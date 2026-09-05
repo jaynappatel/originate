@@ -28,3 +28,11 @@ Gmail specifically; the vocabulary is "company/ARR/founder"; onboarding
 (`onboarding.ts`) checks one person's Claude Code login and one workspace
 folder. All of that is Topwater Capital's own configuration wearing the
 engine, not the engine itself.
+
+Originate is the engine, with that configuration promoted to a first-class,
+swappable input — `originate.config.json` (§4) — and the fixed skill files
+replaced by a template system (§5) that renders a tenant's actual
+`.claude/skills/*` from that config. VC is the reference vertical (§2, §6)
+because it's the one we have a fully worked, production example of; the
+platform is designed against seven archetypes so that "VC-only" assumptions
+get caught now rather than when the second customer signs up.
