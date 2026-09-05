@@ -244,3 +244,11 @@ design; a comms connector can only ever draft.
 ---
 
 ## 8. Deployment model
+
+Local-first, per-company installs — the same trust model as Topwater's
+widget today. Each company runs its own instance, using their own Claude
+Code/Codex login and their own connected data sources; nothing is shared
+across tenants, and no hosted control plane holds anyone's credentials or
+data. This preserves the concrete guarantee Topwater already earned: a
+company's sourcing/diligence data never leaves their own machine or their
+own account.
