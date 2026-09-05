@@ -49,3 +49,14 @@ Some skills write one file per entity rather than one folder per run
 category, grouped by run date, with the entity slug and date kept in the
 filename so a file still identifies itself out of context:
 `outputs/sourcing/<category>/draft-outreach/<YYYY-MM-DD>/<entity-slug>-draft-outreach-<YYYY-MM-DD>.json`.
+
+`outputs/_ledgers/` holds records that belong to no single run and
+accumulate across all of them — never archived, never rolled into a run
+folder. Examples this platform expects a rendered instance to maintain: a
+watchlist ledger for any skill with a WATCHLIST-shaped verdict; a
+comms-drafts ledger recording every draft ever created (what makes rerunning
+outreach safe — a rerun checks this ledger, not a single run folder, before
+deciding whether an entity already has a draft); a claims ledger for
+diligence, recording every extracted fact append-only so a later run's
+claim against the same `(entity, claim_type, period)` can be marked NEW,
+AGREE, or CONFLICT against what's already there.
