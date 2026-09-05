@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://originate.example/schema/originate.config.schema.json",
+  "title": "Originate tenant configuration",
+  "description": "Single source of truth for a company's Originate instance. See docs/CONFIG-SCHEMA.md for the annotated walkthrough and docs/ARCHITECTURE.md section 4 for why this replaces Topwater's CLAUDE.md-prose + scoringRubric.ts + SKILL.md-prose triplication.",
+  "type": "object",
+  "required": ["org", "vertical", "vocabulary", "pipeline", "criteria", "connectors", "diligence", "agentRuntime"],
+  "additionalProperties": false,
+  "properties": {
+    "org": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "approverTitle": { "type": "string", "default": "deal lead", "description": "Who approves Stage A output before spend continues, e.g. 'deal lead', 'hiring lead', 'underwriting leadership'." },
+        "thesisMultiple": { "type": "string", "description": "Optional. Only present for verticals with a re-rate/multiple-expansion thesis (e.g. VC/PE '8-10x revenue'). Omit entirely for verticals with no comparable concept -- templates must not render a thesis-multiple paragraph when this is absent." },
+        "voiceProfiles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "styleNotes"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1, "description": "Short identifier, e.g. a person's first name or a team name." },
+              "styleNotes": { "type": "string", "minLength": 1, "description": "Voice/tone description used to render outreach drafts in this profile's voice." }
+            }
+          }
+        }
+      }
+    },
+    "vertical": {
+      "type": "string",
+      "enum": ["vc", "pe", "recruiting", "real-estate", "corp-dev", "sales-agency", "insurance-mga", "custom"],
+      "description": "Which starter config + vertical overlay seeded this tenant. No runtime effect after generation -- see docs/CONFIG-SCHEMA.md."
+    },
+    "vocabulary": {
+      "type": "object",
+      "required": ["entity", "entityPlural", "verdicts"],
+      "additionalProperties": false,
+      "properties": {
+        "entity": { "type": "string", "minLength": 1, "description": "Singular noun for what this pipeline sources, e.g. 'company', 'candidate', 'property', 'submission'." },
+        "entityPlural": { "type": "string", "minLength": 1 },
+        "verdicts": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "pattern": "^[A-Z][A-Z_]*$" },
+          "description": "Ordered set of allowed final verdict values for the diligence memo (or scoring outcome, if diligence is disabled). No fixed length or wording -- e.g. VC uses PROCEED/PROCEED_WITH_GAPS/PASS/NEEDS_MORE_INFO, insurance MGA uses BIND/DECLINE/REFER."
+        }
+      }
+    },
+    "pipeline": {
+      "type": "object",
+      "required": ["stages"],
+      "additionalProperties": false,
+      "properties": {
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "order", "enabled"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "order": { "type": "integer" },
+              "enabled": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "criteria": {
+      "type": "object",
+      "required": ["immediatePass", "tiers", "judgmentSignals", "redFlags", "onMissingData"],
+      "additionalProperties": false,
+      "properties": {
+        "immediatePass": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/rule" },
+          "description": "Hard stop-and-pass rules checked first, before any other work."
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "rules"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "rules": { "type": "array", "items": { "$ref": "#/definitions/rule" } }
+            }
+          },
+          "description": "Ordered list; an entity matches the first tier (in list order) whose rules all pass."
+        },
+        "judgmentSignals": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/signal" },
+          "description": "Qualitative signals with no threshold value, rendered into the scoring skill's prompt for holistic judgment."
+        },
+        "redFlags": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/definitions/signal" },
+              {
+                "type": "object",
+                "required": ["escalateTo"],
+                "properties": { "escalateTo": { "type": "string", "minLength": 1, "description": "Who/what this flag escalates to -- never a silent auto-pass." } }
+              }
+            ]
+          }
+        },
+        "onMissingData": {
+          "type": "string",
+          "enum": ["null-and-flag"],
+          "default": "null-and-flag",
+          "description": "Never guess, never screen out for a missing field -- set null and flag it."
+        }
+      }
+    },
+    "connectors": {
+      "type": "object",
+      "required": ["discovery", "enrichment", "crm", "comms", "documentStore"],
+      "additionalProperties": false,
+      "properties": {
+        "discovery": { "type": "array", "items": { "type": "string" } },
+        "enrichment": { "type": "array", "items": { "type": "string" } },
+        "crm": { "type": "array", "items": { "type": "string" } },
+        "comms": { "type": "array", "items": { "type": "string" } },
+        "documentStore": { "type": "array", "items": { "type": "string" } }
+      },
+      "description": "Each array names connector ids from the registry (docs/CONNECTOR-CATALOG.md). Note there is deliberately no 'commsSend' role anywhere in this schema -- a comms connector can only ever be asked to draft."
+    },
+    "diligence": {
+      "type": "object",
+      "required": ["enabled", "specialists"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "specialists": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "folder"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "folder": { "type": "string", "minLength": 1, "description": "The single folder this specialist is locked to reading. Never widened at runtime." },
+              "question": { "type": "string", "description": "What this specialist is looking for, beyond its folder's default scope." },
+              "sharedFolderOk": { "type": "boolean", "default": false, "description": "True only for the documented exception where two specialists share a folder but ask different questions." },
+              "sharedFolderReason": { "type": "string", "description": "Required whenever sharedFolderOk is true: which folder is shared and why this specialist's question differs from the other specialist(s) reading it." }
+            }
+          }
+        }
+      },
+      "description": "enabled: false with specialists: [] is a fully valid, first-class state -- see the sales-agency vertical in docs/VERTICAL-PLAYBOOKS.md."
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "creditsPerYear": { "type": "integer", "minimum": 0 },
+        "seats": { "type": "integer", "minimum": 1 }
+      },
+      "description": "Advisory only -- nothing in this schema enforces spend."
+    },
+    "agentRuntime": {
+      "type": "object",
+      "required": ["primary", "skillEditing"],
+      "additionalProperties": false,
+      "properties": {
+        "primary": { "type": "string", "enum": ["claude-code", "codex"], "description": "Who executes the pipeline day to day. Exactly one -- a run needs a deterministic runtime, not an ambiguous choice made at run time." },
+        "skillEditing": { "type": "string", "enum": ["claude-code", "codex", "both"], "description": "Who helps author/edit config and skills. May be 'both'." }
+      }
+    }
+  },
+  "definitions": {
+    "rule": {
+      "type": "object",
+      "required": ["field", "op", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "field": { "type": "string", "minLength": 1, "description": "Free-text field name, resolved against whatever data this tenant's discovery/enrichment connectors actually populate." },
+        "op": { "type": "string", "enum": ["eq", "ne", "lt", "lte", "gt", "gte", "in", "not_in", "contains"] },
+        "value": {}
+      }
+    },
+    "signal": {
+      "type": "object",
+      "required": ["signal", "direction"],
+      "additionalProperties": false,
+      "properties": {
+        "signal": { "type": "string", "minLength": 1 },
+        "direction": { "type": "string", "enum": ["positive", "negative"] }
+      }
+    }
+  }
+}
