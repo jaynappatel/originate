@@ -11,3 +11,5 @@ this file is the invariant a rendered skill inherits regardless of
 vertical.
 
 ---
+
+## Rule O1 — One subject-labelled folder per run
