@@ -43,3 +43,5 @@ reconciliation is stated as arithmetic and needs no hedge at all.
 **W6. Active voice by default.** Name the actor — the company, the deck,
 the analysis. Passives are acceptable in gap ledgers and tables, never in a
 topic sentence.
+
+## Citation and tag rules
