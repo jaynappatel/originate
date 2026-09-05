@@ -65,3 +65,8 @@ in `docs/VERTICAL-PLAYBOOKS.md`.
 ---
 
 ## 3. What ports over unchanged
+
+These are already vertical-agnostic engineering. Originate specs them as
+requirements for whatever execution runtime a tenant runs (see §7); this
+scaffold does not reimplement them, it names them precisely so a future
+implementation doesn't quietly drop one.
