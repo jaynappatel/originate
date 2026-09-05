@@ -14,3 +14,11 @@ configured `crm` connector(s) with `crmWrite` capability
 ({{connectors.crm}}) as records — tier, rationale, red flags, and whatever
 fields that CRM's own schema expects, mapped per that connector's
 `prompt-fragment.md`.
+
+**If no configured `crm` connector declares `crmWrite`, or the field
+mapping for this tenant's CRM hasn't been finalized, this skill must say so
+explicitly and do nothing** — the same honest-placeholder state Topwater's
+own `sync-to-affinity` is in today (field mappings on the CRM side not yet
+finalized), rather than attempting a partial or best-guess write. A
+half-mapped CRM write is worse than no write: it produces records a human
+will trust that don't actually reflect the tenant's real schema.
