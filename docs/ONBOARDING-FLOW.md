@@ -46,3 +46,11 @@ JSON *and* a plain-English restatement, and asks for explicit confirmation
 before moving to the next section — the same "approve before spend"
 philosophy as Topwater's category-research human gate today, applied to
 setup itself rather than only to pipeline runs.
+
+The interview prompt is itself a template
+(`onboarding/interview-prompt.md.tmpl`, not built in this pass — spec only)
+that knows the JSON Schema it's filling in and asks concrete, example-driven
+questions rather than "what are your criteria?" — e.g. for `tiers`: "What's
+the minimum [ARR / years of experience / cap rate] for something you'd
+reach out to immediately?" with the vertical's starter config's own
+thresholds shown as an editable example, not a blank field.
