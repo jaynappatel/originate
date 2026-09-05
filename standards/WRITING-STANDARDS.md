@@ -66,3 +66,7 @@ six sentences.
 states what the finding means for the decision, never a raw datum. When a
 finding depends on or modifies another section's, name the connection
 explicitly.
+
+**W11. Process notes out of the prose.** Corrections to prior runs and
+extraction-history notes live in a header block, not in body prose. Body
+prose states current truth only.
