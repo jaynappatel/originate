@@ -242,3 +242,5 @@ and, critically, `commsSend` is not a capability that exists anywhere in this
 design; a comms connector can only ever draft.
 
 ---
+
+## 8. Deployment model
