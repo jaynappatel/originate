@@ -32,3 +32,14 @@ Originate does not depend on it and is not a refactor of it — it's a new,
 separate project that generalizes the same ideas.
 
 ## Read next
+
+- **`docs/ARCHITECTURE.md`** — the full design: what generalizes, what
+  doesn't, the config schema, the template system, and the onboarding flow.
+- **`docs/VERTICAL-PLAYBOOKS.md`** — seven company archetypes and how each
+  maps onto the pipeline.
+- **`docs/CONFIG-SCHEMA.md`** — annotated walkthrough of
+  `originate.config.json`.
+- **`docs/CONNECTOR-CATALOG.md`** — the connector registry: what a connector
+  declares, and the starting catalog.
+- **`docs/ONBOARDING-FLOW.md`** — the 8-step guided setup, including the
+  Claude Code vs. Codex choice.
