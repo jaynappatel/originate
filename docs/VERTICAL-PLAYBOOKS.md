@@ -75,3 +75,6 @@ noun actually generalizes.
   compensation-negotiation notes), just a different kind of document.
 
 ## 4. Real Estate Acquisition
+
+Tests the platform against a domain with almost no natural-language
+"category research" step and a much heavier discovery volume.
