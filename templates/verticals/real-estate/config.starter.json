@@ -1,0 +1,78 @@
+{
+  "org": {
+    "name": "Example Acquisitions Group",
+    "approverTitle": "acquisitions lead",
+    "voiceProfiles": [
+      { "id": "acquisitions-default", "styleNotes": "Direct, references the specific property and submarket, states an indicative price range plainly." }
+    ]
+  },
+  "vertical": "real-estate",
+  "vocabulary": {
+    "entity": "property",
+    "entityPlural": "properties",
+    "verdicts": ["PURSUE", "PASS", "HOLD_FOR_REVIEW"]
+  },
+  "pipeline": {
+    "stages": [
+      { "id": "category-research", "order": 10, "enabled": true },
+      { "id": "discover-entities", "order": 15, "enabled": true },
+      { "id": "check-crm-history", "order": 18, "enabled": true },
+      { "id": "score-entities", "order": 20, "enabled": true },
+      { "id": "enrich-entities", "order": 30, "enabled": true },
+      { "id": "draft-outreach", "order": 35, "enabled": true },
+      { "id": "sync-to-crm", "order": 40, "enabled": true }
+    ]
+  },
+  "criteria": {
+    "immediatePass": [
+      { "field": "capRate", "op": "lt", "value": 4.0 },
+      { "field": "occupancy", "op": "lt", "value": 70 },
+      { "field": "zoningConflict", "op": "eq", "value": true }
+    ],
+    "tiers": [
+      {
+        "name": "Tier 1 - Immediate LOI",
+        "rules": [
+          { "field": "capRate", "op": "gte", "value": 6.0 },
+          { "field": "pricePerUnit", "op": "lte", "value": 150000 },
+          { "field": "unitCount", "op": "gte", "value": 100 }
+        ]
+      },
+      {
+        "name": "Tier 2 - Watchlist",
+        "rules": [
+          { "field": "capRate", "op": "gte", "value": 5.0 },
+          { "field": "pricePerUnit", "op": "lte", "value": 175000 }
+        ]
+      }
+    ],
+    "judgmentSignals": [
+      { "signal": "submarket rent growth trajectory improving", "direction": "positive" },
+      { "signal": "clear value-add potential via renovation program", "direction": "positive" },
+      { "signal": "motivated seller signals (estate sale, loan maturity, out-of-state owner)", "direction": "positive" }
+    ],
+    "redFlags": [
+      { "signal": "deferred maintenance signals in listing photos or inspection notes", "direction": "negative", "escalateTo": "acquisitions-team" },
+      { "signal": "environmental concerns flagged in public records", "direction": "negative", "escalateTo": "acquisitions-team" },
+      { "signal": "title issues or unresolved liens", "direction": "negative", "escalateTo": "acquisitions-team" }
+    ],
+    "onMissingData": "null-and-flag"
+  },
+  "connectors": {
+    "discovery": ["costar"],
+    "enrichment": ["costar"],
+    "crm": ["salesforce"],
+    "comms": ["gmail"],
+    "documentStore": ["google-drive"]
+  },
+  "diligence": {
+    "enabled": true,
+    "specialists": [
+      { "id": "title-review", "folder": "title", "question": "Chain of title, liens, and any unresolved encumbrances." },
+      { "id": "environmental-review", "folder": "environmental", "question": "Phase I/II findings and any unresolved remediation requirements." },
+      { "id": "lease-abstraction", "folder": "leases", "question": "Rent roll accuracy, lease expirations, and renewal-option terms." }
+    ]
+  },
+  "budget": { "creditsPerYear": 50000, "seats": 4 },
+  "agentRuntime": { "primary": "claude-code", "skillEditing": "codex" }
+}
