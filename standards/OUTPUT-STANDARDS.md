@@ -72,3 +72,5 @@ native output is structured JSON writes a readable prose companion first
 the JSON is still written for downstream skills to parse, but the PDF is
 the human deliverable, never replaced by it. If PDF rendering fails, say so
 plainly in the run's final status rather than silently moving on.
+
+## Rule O3 — Post-run delivery offer
