@@ -17,3 +17,11 @@ check is one of the two skill types whose entire output is a live read of
 an external system, where a day-old answer is a different answer. Reuse
 only within the same calendar day, and state the time of the read whenever
 this skill's output is reused within that window.
+
+If prior contact exists, surface it plainly and stop this
+{{vocabulary.entity}} from proceeding to the outreach stage without an
+explicit override from a person — never silently skip it and never
+silently proceed. If no `crm` connector is configured at all, say so
+explicitly in the output rather than silently treating every
+{{vocabulary.entity}} as never-contacted; an unconfigured CRM connector is
+a gap to flag, not a green light.
