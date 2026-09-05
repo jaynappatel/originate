@@ -9,3 +9,5 @@ none of that history is VC-specific. `{{vocabulary.entity}}` below is a
 template placeholder resolved from `originate.config.json`; the rest of
 this file is the invariant a rendered skill inherits regardless of
 vertical.
+
+---
