@@ -74,3 +74,12 @@ the human deliverable, never replaced by it. If PDF rendering fails, say so
 plainly in the run's final status rather than silently moving on.
 
 ## Rule O3 — Post-run delivery offer
+
+After any run that produced a human-facing deliverable, offer to deliver it
+onward: an email draft (universal — every human-facing deliverable can be
+emailed), plus a sheet and/or deck where the skill's output shape supports
+one. The email draft is always a **draft**, never an auto-send, and the
+recipient is confirmed explicitly before any draft-creation tool is called —
+state exactly what will be attached and to which account before creating
+anything, and never let "email it" be read as "send it." If the user
+declines all three, do nothing beyond O2.
