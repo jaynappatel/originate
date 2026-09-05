@@ -50,3 +50,5 @@ never show two different values for the same quantity, and every stated
 total must be shown rebuilding from its named components.
 
 ### Rule 4 — Confidence tagging
+
+Every finding is tagged High, Medium, or Low with the reason:
