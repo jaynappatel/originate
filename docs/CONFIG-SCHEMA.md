@@ -75,3 +75,14 @@ small. Four parts:
   rule verbatim).
 
 ## `connectors`
+
+Five stage roles, each an array (a tenant can wire more than one connector
+to the same role — e.g. two discovery sources). `documentStore` is separate
+from `crm` because a diligence data room and a CRM are different trust
+boundaries even when the same vendor happens to offer both. See
+`docs/CONNECTOR-CATALOG.md` for the registry contract each connector must
+declare, and note the one capability that deliberately does not exist
+anywhere in the schema: there is no `commsSend`. A connector can declare
+`commsDraft`; sending is not a capability the config vocabulary can express,
+which is what makes "nothing sends itself" structural rather than a policy
+a config could accidentally turn on.
