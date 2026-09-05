@@ -51,3 +51,5 @@ single square-bracket group at the end of the sentence it supports, before
 the period: `[Source, CONFIDENCE]`. Maximum one bracket group per
 sentence — a sentence needing two sources is two sentences. Tags are never
 bolded, backticked, or split mid-sentence.
+
+## Paragraph and section rules
