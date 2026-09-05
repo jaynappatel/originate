@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://originate.example/schema/originate.config.schema.json",
   "title": "Originate tenant configuration",
-  "description": "Single source of truth for a company's Originate instance. See docs/CONFIG-SCHEMA.md for the annotated walkthrough and docs/ARCHITECTURE.md section 4 for why this replaces Topwater's CLAUDE.md-prose + scoringRubric.ts + SKILL.md-prose triplication.",
+  "description": "Single source of truth for a company's Originate instance. See docs/CONFIG-SCHEMA.md for the annotated walkthrough and docs/ARCHITECTURE.md section 4 for why this replaces a CLAUDE.md-prose + scoringRubric.ts + SKILL.md-prose triplication.",
   "type": "object",
   "required": ["org", "vertical", "vocabulary", "pipeline", "criteria", "connectors", "diligence", "agentRuntime"],
   "additionalProperties": false,
@@ -15,6 +15,7 @@
         "name": { "type": "string", "minLength": 1 },
         "approverTitle": { "type": "string", "default": "deal lead", "description": "Who approves Stage A output before spend continues, e.g. 'deal lead', 'hiring lead', 'underwriting leadership'." },
         "thesisMultiple": { "type": "string", "description": "Optional. Only present for verticals with a re-rate/multiple-expansion thesis (e.g. VC/PE '8-10x revenue'). Omit entirely for verticals with no comparable concept -- templates must not render a thesis-multiple paragraph when this is absent." },
+        "purposeNote": { "type": "string", "description": "Optional free text captured during onboarding: what this tenant is sourcing and what a good one looks like, in their own words. Not rendered into any skill template -- it's provenance for why the criteria below look the way they do, read by whichever assistant reopens this config for editing later." },
         "voiceProfiles": {
           "type": "array",
           "minItems": 1,
