@@ -70,3 +70,40 @@ These are already vertical-agnostic engineering. Originate specs them as
 requirements for whatever execution runtime a tenant runs (see §7); this
 scaffold does not reimplement them, it names them precisely so a future
 implementation doesn't quietly drop one.
+
+- **Point-of-use permission gating.** Every external/risky tool call pauses
+  for an explicit approve/reject at the moment it's about to happen — never
+  a blanket "trust me" at launch. A fixed always-ask list (`rm -rf`,
+  `git push`, `sudo`, and — generalized here — any "send" action on whichever
+  comms connector is configured) can never be marked always-allow.
+- **Multi-layer checkpointing.** Per-batch scoring saves (a batch finishing
+  is durable immediately, not held to the end of the run); chain-level step
+  resume (a multi-skill run records exactly which step it's on); a pre-run
+  duplicate-work guard (never redo an identical input that already produced
+  a finished result). Topwater's own incident history (a rerun that
+  re-researched 339 already-scored companies and died before reaching the 3
+  new ones) is exactly the failure mode this defends against, and it isn't
+  vertical-specific.
+- **Crash-recovery and loop detection.** Orphaned subprocess cleanup on
+  restart; stopping an agent that repeats an identical failing action.
+- **"Nothing sends itself."** The comms connector's capability contract
+  (§8, connector registry) declares `commsDraft: true` and there is no
+  `commsSend` capability at all in this design — not a policy an agent is
+  trusted to follow, a capability that doesn't exist to call.
+- **Push-not-poll UI events**, and the **Electron main/renderer trust
+  split** (renderer has no direct filesystem or subprocess access; every
+  request crosses one narrow, verified bridge) — both apply unchanged to any
+  future desktop shell built on this design.
+- **Diligence grounding rules** (quote-through-the-exception, direction
+  words from computation, compute-once-reuse-everywhere, every ratio carries
+  its period, stamp-and-reconcile, never inherit the target's glossary,
+  identify the document before analyzing it, date arithmetic runs in code,
+  decompose blended averages, restating never widens scope) — see
+  `standards/GROUNDING-RULES.md`. These are document-analysis discipline,
+  not VC-specific; the one Topwater-specific piece (thesis-component tags,
+  the fit scorecard, the re-rate thesis summary) is pulled into the *vertical
+  overlay*, not the shared rule set.
+- **Output/evidence/writing conventions** — the run-folder-per-run
+  convention, the guaranteed-PDF rule, the reuse-before-redo rule, the
+  citation/confidence-tagging/two-layer-extraction-vs-interpretation
+  discipline, and the sentence-level prose rules. See `standards/`.
