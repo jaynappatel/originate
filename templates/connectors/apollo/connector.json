@@ -1,0 +1,13 @@
+{
+  "id": "apollo",
+  "displayName": "Apollo",
+  "roles": ["discovery", "enrichment"],
+  "capabilities": { "discovery": true, "enrichment": true, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "api-key",
+    "notes": "No native Claude.ai/Codex connector as of this scaffold -- stored as a tenant-scoped API key in the local config store, checked at point of need per docs/ONBOARDING-FLOW.md step 4."
+  },
+  "requiredScopes": ["apollo:search", "apollo:enrich"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Primary discovery/enrichment connector for the sales-agency vertical -- higher volume, thinner per-record profile than Grata."
+}
