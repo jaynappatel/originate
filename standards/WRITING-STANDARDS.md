@@ -45,3 +45,9 @@ the analysis. Passives are acceptable in gap ledgers and tables, never in a
 topic sentence.
 
 ## Citation and tag rules
+
+**W7. One tag, one place, one format.** Every source/confidence tag is a
+single square-bracket group at the end of the sentence it supports, before
+the period: `[Source, CONFIDENCE]`. Maximum one bracket group per
+sentence — a sentence needing two sources is two sentences. Tags are never
+bolded, backticked, or split mid-sentence.
