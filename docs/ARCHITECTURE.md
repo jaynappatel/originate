@@ -38,3 +38,5 @@ platform is designed against seven archetypes so that "VC-only" assumptions
 get caught now rather than when the second customer signs up.
 
 ---
+
+## 2. The generalizable shape
