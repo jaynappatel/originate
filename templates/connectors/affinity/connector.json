@@ -1,0 +1,13 @@
+{
+  "id": "affinity",
+  "displayName": "Affinity",
+  "roles": ["crm"],
+  "capabilities": { "discovery": false, "enrichment": false, "crmRead": true, "crmWrite": true, "commsDraft": false, "docs": false },
+  "auth": {
+    "mode": "native-mcp",
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today."
+  },
+  "requiredScopes": ["affinity:list-read", "affinity:company-read", "affinity:company-write"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "crmWrite depends on a tenant having finalized its own Affinity field mapping -- see templates/core/sync-to-crm/SKILL.md.tmpl, which must say plainly when that mapping isn't done rather than attempting a partial write."
+}
