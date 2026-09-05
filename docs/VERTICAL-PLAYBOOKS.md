@@ -120,3 +120,6 @@ Stage A driver and CRM.
   specialist rather than just reparametrizing the existing eight.
 
 ## 6. Sales / BDR Agency (ICP-driven outbound)
+
+The vertical that proves the platform must support running **only**
+stages A–E, with diligence off entirely.
