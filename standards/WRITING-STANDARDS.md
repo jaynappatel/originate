@@ -91,3 +91,10 @@ scheme per document.
 
 **W15. Quote upstream once.** A synthesis document may reuse a distinctive
 upstream phrase once; a coined phrase never appears twice in one document.
+
+**W16. Executive summary bar.** Any "at a glance" summary section holds to
+a higher standard than the rest of the document: every sentence at most 30
+words, at most one parenthetical per sentence, at most two bracket tags in
+the whole paragraph, opening with what the entity is and the tension that
+decides the outcome, closing with the directional read as a full sentence.
+The test: would the decision-maker forward this paragraph unedited?
