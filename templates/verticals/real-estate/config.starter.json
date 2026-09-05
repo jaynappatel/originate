@@ -21,9 +21,14 @@
       { "id": "enrich-entities", "order": 30, "enabled": true },
       { "id": "draft-outreach", "order": 35, "enabled": true },
       { "id": "sync-to-crm", "order": 40, "enabled": true }
-    ]
+    ],
+    "stageA": { "unitNoun": "market thesis", "inputNoun": "market/asset-class name" }
   },
   "criteria": {
+    "stageAQuestions": [
+      { "title": "Market thesis", "prompt": "What submarket and asset-class characteristics define a qualifying acquisition target, and what is driving rent or value growth there?", "jsonKey": "market_thesis" },
+      { "title": "Value-add potential", "prompt": "What renovation, repositioning, or operational improvements would justify the target return on a property in this submarket?", "jsonKey": "value_add_potential" }
+    ],
     "immediatePass": [
       { "field": "capRate", "op": "lt", "value": 4.0 },
       { "field": "occupancy", "op": "lt", "value": 70 },

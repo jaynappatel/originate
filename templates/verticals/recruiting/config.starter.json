@@ -21,9 +21,14 @@
       { "id": "enrich-entities", "order": 30, "enabled": true },
       { "id": "draft-outreach", "order": 35, "enabled": true },
       { "id": "sync-to-crm", "order": 40, "enabled": true }
-    ]
+    ],
+    "stageA": { "unitNoun": "mandate", "inputNoun": "role/mandate name" }
   },
   "criteria": {
+    "stageAQuestions": [
+      { "title": "Role fit criteria", "prompt": "What experience, comp band, and location constraints define a genuinely qualified candidate for this mandate?", "jsonKey": "role_fit_criteria" },
+      { "title": "Success profile", "prompt": "What does success in this role look like in the first 12 months, and what background best predicts it?", "jsonKey": "success_profile" }
+    ],
     "immediatePass": [
       { "field": "yearsRelevantExperience", "op": "lt", "value": 3 },
       { "field": "compExpectation", "op": "gt", "value": 260000 },

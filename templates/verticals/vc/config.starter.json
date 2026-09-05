@@ -24,9 +24,16 @@
       { "id": "enrich-entities", "order": 30, "enabled": true },
       { "id": "draft-outreach", "order": 35, "enabled": true },
       { "id": "sync-to-crm", "order": 40, "enabled": true }
-    ]
+    ],
+    "stageA": { "unitNoun": "category", "inputNoun": "category name" }
   },
   "criteria": {
+    "stageAQuestions": [
+      { "title": "Competitive dynamics", "prompt": "Is there a dominant player that owns the majority of the addressable market, or is the space fragmented across many providers? If dominant, name them and describe where the seams are.", "jsonKey": "competitive_dynamics" },
+      { "title": "Customer segmentation", "prompt": "Which segments in this category primarily serve SMB and mid-market customers, and which serve enterprise? Be specific about what those terms mean in this vertical.", "jsonKey": "customer_segmentation" },
+      { "title": "Workflow product quality", "prompt": "Are the leading providers strong workflow products that generate proprietary data through daily use, or are they reporting layers and point tools that could be replaced without disrupting the core workflow?", "jsonKey": "workflow_product_quality" },
+      { "title": "Exit landscape", "prompt": "What does strategic acquisition and investment activity look like in this space? Who has been buying, and at what multiples?", "jsonKey": "exit_landscape" }
+    ],
     "immediatePass": [
       { "field": "yearsSinceLastRaise", "op": "lte", "value": 2 },
       { "field": "totalFundingRaised", "op": "gt", "value": 10000000 },
