@@ -56,3 +56,10 @@ tenant's own Claude.ai/Codex sign-in (native MCP), same as today:
 New for other verticals (§`docs/VERTICAL-PLAYBOOKS.md`), specified to the
 same contract shape so a tenant can wire them in without the platform
 treating them as second-class:
+
+| id | Roles | Vertical | Notes |
+|---|---|---|---|
+| `apollo` | discovery, enrichment | Sales agency | Prospect database; higher-volume, thinner-per-record profile than Grata. |
+| `salesforce` | crmRead, crmWrite | Sales agency, corp dev | Generic CRM check/write-back in place of Affinity. |
+| `linkedin-recruiter` | discovery | Recruiting | Candidate sourcing. Also see the ATS collector pattern below. |
+| `costar` | discovery, enrichment | Real estate | Listings + comps/zoning/tax enrichment from one source. |
