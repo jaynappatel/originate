@@ -39,3 +39,5 @@ name — draft-only is enforced at the capability-contract layer, not left to
 the skill prompt's good judgment (the same reasoning Topwater's actual Gmail
 integration already applies: no send tool wired at any layer, not a policy
 the agent is trusted to follow).
+
+## Starting catalog (this pass)
