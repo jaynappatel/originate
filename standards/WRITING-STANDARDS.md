@@ -13,3 +13,5 @@ documents, no bullet points, no emoji, no em dashes. Where an em dash wants
 to go, use a comma, a colon, a period, or parentheses — most em dashes are
 splices holding an overloaded clause together, and removing them forces a
 real sentence.
+
+## Sentence rules
