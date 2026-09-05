@@ -43,3 +43,9 @@ makes a run's outputs immutable once written. Two runs in the same
 clock-minute append `-2`, `-3`. Every artifact from the run (the dated
 source file, any paired `-interpretation.md`, the guaranteed PDF from O2,
 any sheet/deck from O3) lands inside that one folder.
+
+Some skills write one file per entity rather than one folder per run
+(a batch draft-outreach run is the canonical case) — those go under their
+category, grouped by run date, with the entity slug and date kept in the
+filename so a file still identifies itself out of context:
+`outputs/sourcing/<category>/draft-outreach/<YYYY-MM-DD>/<entity-slug>-draft-outreach-<YYYY-MM-DD>.json`.
