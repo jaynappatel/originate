@@ -58,3 +58,6 @@ Every finding is tagged High, Medium, or Low with the reason:
 | High | Verified/audited source, signed instrument, or two or more independent sources agree |
 | Medium | Unverified figures, single source, internally consistent but not independently confirmed |
 | Low | Single source, unverified, inconsistencies present, significant assumptions required, or data is stale |
+
+Tag every number, risk flag, and summary finding — never general contextual
+statements.
