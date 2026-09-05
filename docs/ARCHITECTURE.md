@@ -213,3 +213,11 @@ actual skill, the template dropped something real.
 ---
 
 ## 6. Onboarding — the guided, chat-driven setup
+
+Full detail in `docs/ONBOARDING-FLOW.md`. Eight steps: archetype pick →
+choose agent runtime(s) (skill-editing assistant vs. pipeline execution
+runtime, independently — see below) → guided criteria interview → connector
+selection → generate → dry-run → ongoing edit loop → permission policy
+setup. The centerpiece is that onboarding isn't a one-time wizard: "edit my
+skills" reopens the same chat editor, scoped to just that tenant's files,
+for the life of the account.
