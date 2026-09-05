@@ -19,3 +19,9 @@ stated in both of their own `SKILL.md` files, never assumed. There is
 deliberately no config option for "read everything" — a specialist that
 needs broader access is a sign the specialist list itself needs another
 entry, not that this rule should bend.
+
+{{#if specialist.sharedFolderOk}}
+This specialist is a documented exception: it also reads
+`diligence/[{{vocabulary.entity}}]/{{specialist.sharedFolderReason}}`, for
+the specific reason stated in config, and no other folder beyond that.
+{{/if}}
