@@ -63,3 +63,5 @@ treating them as second-class:
 | `salesforce` | crmRead, crmWrite | Sales agency, corp dev | Generic CRM check/write-back in place of Affinity. |
 | `linkedin-recruiter` | discovery | Recruiting | Candidate sourcing. Also see the ATS collector pattern below. |
 | `costar` | discovery, enrichment | Real estate | Listings + comps/zoning/tax enrichment from one source. |
+
+### A note on the recruiting vertical's discovery connectors
