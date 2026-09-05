@@ -221,3 +221,5 @@ selection → generate → dry-run → ongoing edit loop → permission policy
 setup. The centerpiece is that onboarding isn't a one-time wizard: "edit my
 skills" reopens the same chat editor, scoped to just that tenant's files,
 for the life of the account.
+
+### Claude Code vs. Codex — two separate decisions
