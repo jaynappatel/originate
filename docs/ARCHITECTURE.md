@@ -109,3 +109,5 @@ implementation doesn't quietly drop one.
   discipline, and the sentence-level prose rules. See `standards/`.
 
 ---
+
+## 4. `originate.config.json` — the single source of truth
