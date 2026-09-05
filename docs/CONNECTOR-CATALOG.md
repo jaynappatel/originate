@@ -52,3 +52,7 @@ tenant's own Claude.ai/Codex sign-in (native MCP), same as today:
 | `clay` | enrichment | Paid per-company enrichment, gated to qualifying tiers only. |
 | `gmail` | commsDraft | Draft-only, structurally — see above. |
 | `google-drive` | docs | Data-room / shared-drive document access for diligence. |
+
+New for other verticals (§`docs/VERTICAL-PLAYBOOKS.md`), specified to the
+same contract shape so a tenant can wire them in without the platform
+treating them as second-class:
