@@ -56,3 +56,13 @@ reach out to immediately?" with the vertical's starter config's own
 thresholds shown as an editable example, not a blank field.
 
 ## 4. Connector selection
+
+Present the catalog (`docs/CONNECTOR-CATALOG.md`) grouped by stage role —
+discovery, enrichment, CRM, comms, documents — and let the company pick one
+or none per role (more than one is allowed for `discovery`/`crm`; the
+`criteria`/`connectors` schema doesn't cap it). For each connector chosen,
+walk credential setup checked **at the point it's actually needed**, not
+all up front — this reuses Topwater's own `onboarding.ts` pattern (workspace
+and credential checks fire only when a run actually needs them, and clear
+themselves automatically once fixed) rather than a blanket "connect
+everything before you can start" gate.
