@@ -37,3 +37,5 @@ MGA) uses `["BIND", "DECLINE", "REFER"]`; VC uses four values including
 line is exactly one of this list's values — enforced mechanically, the same
 way Topwater's memo enforces PROCEED/PASS/etc. today, just reading the list
 from config instead of a hardcoded string check.
+
+## `pipeline.stages`
