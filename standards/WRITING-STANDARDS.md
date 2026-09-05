@@ -61,3 +61,8 @@ the document's argument.
 
 **W9. Paragraph breaks are mandatory.** No paragraph runs over 120 words or
 six sentences.
+
+**W10. End on meaning, then bridge.** A section's last prose sentence
+states what the finding means for the decision, never a raw datum. When a
+finding depends on or modifies another section's, name the connection
+explicitly.
