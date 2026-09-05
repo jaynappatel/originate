@@ -77,3 +77,18 @@ never be presented with the same confidence as a directly extracted field.
 When two passages in the same deliverable state the same fact, they must
 trace to the identical computed value, never two independent computations
 that were never cross-checked against each other.
+
+**G11 — Same-day outputs: highest version wins, never the bare filename by
+default.** For any store that hasn't adopted the run-folder convention in
+`standards/OUTPUT-STANDARDS.md` Rule O1, a rerun on the same date saves
+alongside the original as `-v2`, `-v3`, etc. rather than overwriting it.
+Before reading another skill's dated output, list every file matching that
+subject/skill/date, including all `-vN` suffixes, and use the highest
+version found — the suffixless file counts as v1, not as the default or
+latest. Never pattern-match the literal bare-filename path and stop there:
+on most filesystems, `-v2`/`-v3` sort before the bare filename in a plain
+lexicographic listing, so a literal-match read silently picks up the oldest
+same-day file. State which file (including its version suffix) was
+actually used wherever the output is cited. Any skill whose output already
+lands in an O1 run folder is exempt from this rule entirely — a same-day
+rerun already gets its own folder, so there's nothing to glob for.
