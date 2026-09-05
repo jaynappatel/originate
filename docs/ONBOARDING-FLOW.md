@@ -37,3 +37,12 @@ them is the likely mistake:
   ported."
 
 ## 3. Guided criteria interview
+
+A chat session with whichever assistant was picked in step 2 walks the
+company through the `criteria` schema section by section:
+`immediatePass` → `tiers` → `judgmentSignals` → `redFlags` →
+`onMissingData`. After each section, the wizard shows the generated
+JSON *and* a plain-English restatement, and asks for explicit confirmation
+before moving to the next section — the same "approve before spend"
+philosophy as Topwater's category-research human gate today, applied to
+setup itself rather than only to pipeline runs.
