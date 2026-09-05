@@ -26,3 +26,15 @@ scoring already ruled out wastes real budget for no possible benefit.
 ---
 
 ## What this skill does
+
+1. For each eligible {{vocabulary.entity}}, calls the configured
+   `enrichment` connector(s) ({{connectors.enrichment}}) per that
+   connector's own `prompt-fragment.md` (field limits, rate limits).
+2. Never guesses a field the connector didn't return — missing enrichment
+   data follows `criteria.onMissingData` the same as missing discovery
+   data: null and flagged, never invented.
+3. Logs every paid call (connector, {{vocabulary.entity}} count, and
+   whatever credit/cost unit that connector reports) to a usage ledger —
+   generalizes Topwater's CLAUDE.md Section 6 "log every run" discipline
+   and the `budget` block's advisory role in
+   `docs/CONFIG-SCHEMA.md`.
