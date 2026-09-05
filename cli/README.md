@@ -25,3 +25,7 @@ point (onboarding step 7). Shows a diff of what would change before
 writing.
 
 ### `originate generate`
+
+The template renderer (onboarding step 5). For each
+`templates/core/*/SKILL.md.tmpl`, plus any additive skills named by the
+tenant's vertical overlay:
