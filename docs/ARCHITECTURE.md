@@ -230,3 +230,5 @@ here:
 
 1. **Who helps you *author* your config and skills** (`agentRuntime.skillEditing`) — Claude Code, Codex, or both offered side by side. This is a development-tool choice with no structural constraint; either can read/write markdown and JSON.
 2. **Who *executes* the pipeline day to day** (`agentRuntime.primary`) — Claude Code or Codex. This one has a real dependency: today's connectors (Grata/Affinity/Clay/Gmail) are wired through Claude Code's native MCP/connector model, tied to the user's Claude.ai sign-in. Running the pipeline on Codex means either porting each connector's tool-calling convention to Codex's own tool/MCP configuration, or building a thin adapter layer that translates Originate's connector registry into whichever runtime's convention applies. This is named explicitly as a real engineering dependency to sequence in a later phase — not something this scaffold solves, and not something to gloss over in the onboarding UI as if it were symmetric with choice 1.
+
+---
