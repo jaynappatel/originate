@@ -151,3 +151,13 @@ this **one** list, so there's nothing left to fall out of sync the way
 Topwater's three-way duplication can. This is deliberately the *only* place
 config becomes "logic" rather than data — everything else in the schema is
 inert configuration a template reads.
+
+Worth being honest about a real precedent here: Topwater's own team already
+evaluated and explicitly rejected building a general filter/rules DSL, as
+overkill *at single-tenant scale* (recorded in
+`docs/topwater-master/manifest.json`'s `rejectedCapabilities`, re: the
+Analyst Workspace filter engine). This plan revisits that call because
+multi-tenant genericity is now the actual requirement it wasn't for
+single-tenant Topwater — and it keeps the DSL intentionally narrow
+(comparisons + weighted soft signals, no arbitrary logic, no user-defined
+functions) specifically so it doesn't reopen the scope that was rejected.
