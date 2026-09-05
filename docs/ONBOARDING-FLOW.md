@@ -8,3 +8,10 @@ a wizard a company completes once, it's the permanent interface for
 changing how their instance works.
 
 ## 1. Archetype pick
+
+Choose a starter vertical (`vc`, `pe`, `recruiting`, `real-estate`,
+`corp-dev`, `sales-agency`, `insurance-mga`) or `custom` (blank). This only
+selects which `templates/verticals/<name>/config.starter.json` and which
+additive skill overlay seed the new tenant's config — nothing is locked in.
+A company can pick the closest archetype and diverge from it freely in step
+3.
