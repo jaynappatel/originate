@@ -66,3 +66,5 @@ all up front — this reuses Topwater's own `onboarding.ts` pattern (workspace
 and credential checks fire only when a run actually needs them, and clear
 themselves automatically once fixed) rather than a blanket "connect
 everything before you can start" gate.
+
+## 5. Generate
