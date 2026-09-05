@@ -60,3 +60,5 @@ deciding whether an entity already has a draft); a claims ledger for
 diligence, recording every extracted fact append-only so a later run's
 claim against the same `(entity, claim_type, period)` can be marked NEW,
 AGREE, or CONFLICT against what's already there.
+
+## Rule O2 — Guaranteed PDF, every run, no exceptions
