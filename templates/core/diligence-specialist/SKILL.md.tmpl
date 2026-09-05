@@ -9,3 +9,13 @@ same template, substituting each entry's own `folder` and `question`.
 ---
 
 ## Folder lock — the one rule that can never be relaxed
+
+This skill reads **only** `diligence/[{{vocabulary.entity}}]/{{specialist.folder}}/`.
+Full stop, no exception beyond what's stated explicitly right here. Never
+read a sibling folder because it "might be relevant" — if two specialists
+genuinely need the same folder to answer different questions, that's
+expressed in config as `sharedFolderOk: true` on both specialist entries,
+stated in both of their own `SKILL.md` files, never assumed. There is
+deliberately no config option for "read everything" — a specialist that
+needs broader access is a sign the specialist list itself needs another
+entry, not that this rule should bend.
