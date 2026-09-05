@@ -16,3 +16,12 @@ real estate acquisition, corp dev, sales development, and insurance
 underwriting.
 
 ## Why this exists
+
+Topwater Capital's own sourcing/diligence system
+(`~/Desktop/topwater-workflows`) proved the pipeline shape, the permission
+model, and the checkpointing engineering work. But everything that makes it
+*Topwater's* is hardcoded — the scoring rubric lives in three files kept in
+sync by a test, the connectors are a fixed four, and onboarding assumes one
+person at one firm. Originate is that same proven engine, generalized so any
+company can configure it for their own criteria, their own connectors, and
+their own AI runtime, through a guided setup instead of hand-edited source.
