@@ -234,3 +234,9 @@ here:
 ---
 
 ## 7. Connectors
+
+Full registry design and starting catalog: `docs/CONNECTOR-CATALOG.md`. Each
+connector declares a capability contract — which stage roles it can fill
+(`discovery`, `enrichment`, `crmRead`, `crmWrite`, `commsDraft`, `docs`) —
+and, critically, `commsSend` is not a capability that exists anywhere in this
+design; a comms connector can only ever draft.
