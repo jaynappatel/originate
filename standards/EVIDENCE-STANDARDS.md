@@ -22,3 +22,5 @@ them.
 These apply to every diligence specialist without exception. A person is
 making a real decision from this output — a confident-sounding wrong number
 is worse than an honest null.
+
+### Rule 1 — Citation requirement
