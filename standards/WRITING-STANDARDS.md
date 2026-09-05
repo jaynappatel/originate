@@ -35,3 +35,7 @@ the same word or ride the same skeleton. A skill's own instructions name
 required content, never required phrasing — never reproduce a spec item's
 exact wording in the output, and a spec should never contain a quotable
 output sentence for the same reason.
+
+**W5. One qualifier per claim.** State uncertainty once — the confidence
+tag or one hedging word, never both, never stacked. A computed
+reconciliation is stated as arithmetic and needs no hedge at all.
