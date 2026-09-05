@@ -16,3 +16,5 @@ Each connector directory under `templates/connectors/<id>/` holds:
   skill's own inline instructions today.
 
 ## The capability contract
+
+Every `connector.json` declares a subset of:
