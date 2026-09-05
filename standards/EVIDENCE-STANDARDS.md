@@ -31,3 +31,10 @@ from source data, cite the inputs' locations, not just the result.
 Uncited claims are not allowed — if it can't be cited, don't state it.
 
 ### Rule 2 — Grounding rule
+
+Answer only from the materials actually provided. If something isn't in the
+documents, say exactly "Not found in materials" — never infer, estimate
+silently, or pattern-match to a "typical" example in this space. "Not
+extractable" is not the same as "not found": before declaring a file
+unreadable, attempt every reasonable extraction method in order and record
+which one succeeded, or the exact failure of each attempt tried.
