@@ -25,3 +25,8 @@ sync by a test, the connectors are a fixed four, and onboarding assumes one
 person at one firm. Originate is that same proven engine, generalized so any
 company can configure it for their own criteria, their own connectors, and
 their own AI runtime, through a guided setup instead of hand-edited source.
+
+`topwater-workflows` is untouched by this project and continues running
+exactly as it does today, as Topwater Capital's own private instance.
+Originate does not depend on it and is not a refactor of it — it's a new,
+separate project that generalizes the same ideas.
