@@ -40,3 +40,11 @@ unreadable, attempt every reasonable extraction method in order and record
 which one succeeded, or the exact failure of each attempt tried.
 
 ### Rule 3 — Determinism rule
+
+Any arithmetic runs in code, not free-typed — growth rates, ratios, margins,
+any computed value is calculated in a snippet and the result inserted into
+the output, with the snippet itself serving as the audit trail. Do not
+round intermediate values; round only the final reported number. Compute
+each derived value once and reuse it everywhere it appears — two sections
+never show two different values for the same quantity, and every stated
+total must be shown rebuilding from its named components.
