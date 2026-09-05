@@ -29,3 +29,21 @@ writing.
 The template renderer (onboarding step 5). For each
 `templates/core/*/SKILL.md.tmpl`, plus any additive skills named by the
 tenant's vertical overlay:
+
+1. Load `originate.config.json`.
+2. Resolve every `{{path.to.value}}` placeholder against the config
+   (dotted-path lookup; `{{#if x}}...{{/if}}` and `{{#each list}}...{{/each}}`
+   blocks per the mustache-style syntax used throughout `templates/core/`).
+3. Where `diligence.enabled` is true, instantiate
+   `templates/core/diligence-specialist/SKILL.md.tmpl` once per
+   `diligence.specialists` entry, writing each to its own
+   `.claude/skills/<specialist.id>/SKILL.md`.
+4. Write every resolved file to the tenant workspace's `.claude/skills/`,
+   and scaffold `sourcing/`, `diligence/` (if enabled), `docs/`, `outputs/`
+   matching `standards/OUTPUT-STANDARDS.md`'s Rule O1 layout.
+5. Never overwrites a tenant's manually-edited skill file silently — if a
+   file exists and its content doesn't match what the last `generate` run
+   produced (tracked via a checksum sidecar), warn and require an explicit
+   `--force` or a merge, the same "never silently clobber in-progress work"
+   principle that governs the destructive-action guidance for any agent
+   operating on a user's files.
