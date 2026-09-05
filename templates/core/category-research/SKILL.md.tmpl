@@ -72,3 +72,12 @@ a list the team can't trust yet.
 ### {{this.title}}
 
 {{this.prompt}}
+
+{{/each}}
+{{! Rendered against the VC starter config, this section produces exactly
+    Topwater's four questions: competitive dynamics, customer segmentation,
+    workflow product quality, exit landscape — each with its own prompt
+    paragraph, unchanged from the original skill file. A vertical with no
+    comparable "exit landscape" concept (e.g. insurance MGA) simply omits
+    that entry from its own criteria.stageAQuestions list; nothing in this
+    template hardcodes the count or the names. }}
