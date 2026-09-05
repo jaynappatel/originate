@@ -261,3 +261,11 @@ Built in this pass: this document, the vertical playbooks, the config
 schema (real, validatable JSON Schema), the connector catalog and registry
 entries, the onboarding flow spec, and the 9 core skill templates plus 3
 vertical starter configs.
+
+**Not built in this pass, and deliberately so:** the Electron shell, the
+template-rendering generator script, the pipeline execution engine, and any
+Codex adapter code. These are the natural next phase. The templates and
+schema are written precisely enough (concrete placeholder syntax, a worked
+rendering example in §5, a real JSON Schema rather than prose) that
+implementing the generator is a mechanical follow-on — read the config,
+resolve each `{{path}}` placeholder, write the file — not a redesign.
