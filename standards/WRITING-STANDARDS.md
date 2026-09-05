@@ -58,3 +58,6 @@ bolded, backticked, or split mid-sentence.
 sentence stating the finding — never a citation, a label, or a bare figure.
 Test: reading only the first sentence of every paragraph should reproduce
 the document's argument.
+
+**W9. Paragraph breaks are mandatory.** No paragraph runs over 120 words or
+six sentences.
