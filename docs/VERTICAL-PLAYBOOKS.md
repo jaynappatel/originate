@@ -46,3 +46,30 @@ pipeline shape:
 
 The archetype that most tests whether "company" as the hardcoded entity
 noun actually generalizes.
+
+- **Entity:** candidate. **Verdicts:** could be as simple as
+  ADVANCE / HOLD / DECLINE.
+- **Stage A (thesis):** a role/mandate spec — comp band, must-have
+  experience, reporting line, location constraints — approved by the hiring
+  lead before sourcing spends any time.
+- **Stage B (discovery):** LinkedIn Recruiter, an ATS's own candidate
+  database, or a careers-page/ATS collector pattern (Topwater's widget
+  already has `atsGreenhouseCollector.ts`, `atsLeverCollector.ts`,
+  `atsAshbyCollector.ts`, `atsLoxoCollector.ts` — these map directly onto
+  Originate's `discovery` connector role for this vertical, ported near
+  verbatim).
+- **Stage C (scoring):** fit against the role rubric — years of relevant
+  experience, comp-band overlap, location/relocation willingness — as hard
+  gates; culture/leadership-style fit as judgment signals.
+- **Stage D (enrichment):** contact info, publicly available background,
+  reference availability.
+- **Stage E (outreach):** candidate outreach in the recruiter's voice —
+  still draft-only; a bad "you're hired" auto-send is exactly the kind of
+  action the permission-gating model exists to stop.
+- **CRM:** the firm's own ATS or a lightweight CRM in place of Affinity.
+- **Diligence, reframed:** reference checks and background verification —
+  locked "folders" become a locked set of reference-call notes and
+  background-check documents, read by one specialist each, ending in a
+  hire/no-hire recommendation memo. Same folder-locking discipline as
+  Topwater's data-room specialists (a reference-checker never reads the
+  compensation-negotiation notes), just a different kind of document.
