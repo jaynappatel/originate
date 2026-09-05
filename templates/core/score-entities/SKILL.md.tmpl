@@ -51,3 +51,11 @@ interrupt without losing finished work.
    {{vocabulary.entity}} out solely because a field is missing — set it
    null, flag it, and continue evaluating everything that can still be
    evaluated.
+
+Steps 1-2 are deterministic and must be computed the same way every time
+given the same input data — the actual comparison logic (rule field/op/
+value evaluation) is the one piece of this skill that is genuinely code,
+not prose judgment, and it is generated from the exact same `criteria`
+JSON a human reviewed during onboarding (see
+`docs/ARCHITECTURE.md` §4) — there is no second, hand-maintained copy of
+these thresholds anywhere else to fall out of sync with.
