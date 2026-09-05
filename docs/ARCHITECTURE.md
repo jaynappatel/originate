@@ -115,3 +115,29 @@ implementation doesn't quietly drop one.
 This is the thing that replaces CLAUDE.md-as-config plus scattered
 TypeScript constants. Full schema: `schema/originate.config.schema.json`.
 Annotated walkthrough: `docs/CONFIG-SCHEMA.md`. Shape:
+
+```jsonc
+{
+  "org": { "name": "", "voiceProfiles": [{ "id": "", "styleNotes": "" }] },
+  "vertical": "vc | pe | recruiting | real-estate | corp-dev | sales-agency | insurance-mga | custom",
+  "vocabulary": {
+    "entity": "company", "entityPlural": "companies",
+    "verdicts": ["PROCEED", "PROCEED_WITH_GAPS", "PASS", "NEEDS_MORE_INFO"]
+  },
+  "pipeline": { "stages": [{ "id": "category-research", "order": 10, "enabled": true }] },
+  "criteria": {
+    "immediatePass": [{ "field": "fundingRaisedWithinYears", "op": "lte", "value": 2 }],
+    "tiers": [{ "name": "Tier 1", "rules": [{ "field": "arr", "op": "gte", "value": 5000000 }] }],
+    "judgmentSignals": [{ "signal": "founder has domain background", "direction": "positive" }],
+    "redFlags": [{ "signal": "customer concentration", "escalateTo": "deal-team" }],
+    "onMissingData": "null-and-flag"
+  },
+  "connectors": {
+    "discovery": ["grata"], "enrichment": ["clay"], "crm": ["affinity"],
+    "comms": ["gmail"], "documentStore": ["google-drive"]
+  },
+  "diligence": { "enabled": true, "specialists": [{ "id": "financial-analysis", "folder": "financials" }] },
+  "budget": { "creditsPerYear": 86000, "seats": 2 },
+  "agentRuntime": { "primary": "claude-code | codex", "skillEditing": "claude-code | codex | both" }
+}
+```
