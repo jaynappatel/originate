@@ -1,0 +1,13 @@
+{
+  "id": "google-drive",
+  "displayName": "Google Drive",
+  "roles": ["documentStore"],
+  "capabilities": { "discovery": false, "enrichment": false, "crmRead": false, "crmWrite": false, "commsDraft": false, "docs": true },
+  "auth": {
+    "mode": "native-mcp",
+    "notes": "Reached through the tenant's own Claude.ai/Codex sign-in, same as Topwater's widget today."
+  },
+  "requiredScopes": ["drive:read"],
+  "codexAdapterStatus": "not-yet-ported",
+  "notes": "Read-only. Used by diligence-specialist instances to read a locked data-room folder -- the folder lock itself is enforced in each specialist's own SKILL.md, not by this connector."
+}
