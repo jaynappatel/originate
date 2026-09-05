@@ -18,3 +18,12 @@ Each connector directory under `templates/connectors/<id>/` holds:
 ## The capability contract
 
 Every `connector.json` declares a subset of:
+
+| Flag | Means |
+|---|---|
+| `discovery` | Can produce a broad candidate/entity list from a search or an inbound queue |
+| `enrichment` | Can pull deeper, usually paid, per-entity data |
+| `crmRead` | Can check prior contact/history before any outreach |
+| `crmWrite` | Can write scored/qualified entities back as CRM records |
+| `commsDraft` | Can create a draft in some outbound channel |
+| `docs` | Can read/list documents in a data room or shared drive |
