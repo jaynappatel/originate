@@ -45,3 +45,10 @@ separate project that generalizes the same ideas.
   Claude Code vs. Codex choice.
 
 ## What's in this repo right now
+
+This pass is a **design document plus a full scaffold** — schemas, templates,
+and docs — not a running product. There is no generator script, no Electron
+shell, and no execution engine yet; see "Explicit scope boundary" in
+`docs/ARCHITECTURE.md` for exactly what's deferred and why the scaffold is
+still precise enough to make building those a mechanical next step rather
+than a redesign.
