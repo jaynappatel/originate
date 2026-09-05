@@ -1,7 +1,7 @@
 # /category-research
 
 This skill takes a {{pipeline.stageA.inputNoun|| "category name"}} from
-{{org.approverTitle}} and researches the space, returning a structured
+the {{org.approverTitle}} and researches the space, returning a structured
 breakdown that defines exactly what kind of {{vocabulary.entity}} the team
 is looking for — so that when the search runs, it's pointed at the right
 target from the start.
@@ -15,9 +15,10 @@ research, any API call, or any other step in this file. Reuse is never
 silent: say in the visible output which prior run was reused, its date,
 and the split between carried-forward and new.
 
-The unit here is the {{pipeline.stageA.unitNoun|| "category"}}. One this
-skill has already researched and {{org.approverTitle}} has already
-approved is not researched again — compare against the most recent
+The unit here is the {{pipeline.stageA.unitNoun|| "category"}}. A
+{{pipeline.stageA.unitNoun|| "category"}} this skill has already
+researched and the {{org.approverTitle}} has already approved is not
+researched again — compare against the most recent
 approved brief for this {{pipeline.stageA.unitNoun|| "category"}} slug
 before writing anything. A genuinely different one, or a scope change the
 person names, is new work; the same one a day later is not.
@@ -33,11 +34,11 @@ believe the space has moved.
 
 ## When this skill runs
 
-{{org.approverTitle}} names a {{pipeline.stageA.unitNoun|| "category"}}.
+The {{org.approverTitle}} names a {{pipeline.stageA.unitNoun|| "category"}}.
 That's the only trigger — the name doesn't need to be precise, this skill's
 job is to make it precise.
 
-This is Stage A of the pipeline. Nothing else runs until {{org.approverTitle}}
+This is Stage A of the pipeline. Nothing else runs until the {{org.approverTitle}}
 reviews this output and explicitly approves it. The approval is a hard
 gate: running the discovery stage on an unapproved
 {{pipeline.stageA.unitNoun|| "category"}} spends real connector credits on
@@ -87,7 +88,7 @@ a list the team can't trust yet.
 ## What this skill must not do
 
 No {{criteria.excludedDataTypes|| "market size numbers"}} anywhere in the
-output — {{org.approverTitle}} has confirmed this is noise for this
+output — the {{org.approverTitle}} has confirmed this is noise for this
 instance. Do not present {{org.name}}'s own internal thesis figures
 {{#if org.thesisMultiple}}(e.g. the {{org.thesisMultiple}} target){{/if}}
 as if they were external market data about this space — if a real, sourced
@@ -136,7 +137,7 @@ per `standards/OUTPUT-STANDARDS.md` Rule O2. Rule O3 applies afterward.
 
 ## Human gate — mandatory
 
-After producing the output, stop. Surface it to {{org.approverTitle}} with
+After producing the output, stop. Surface it to the {{org.approverTitle}} with
 a brief note that this is ready for review and that the discovery stage
 will not run until they approve. Do not proceed without an explicit
 approval. A non-response is not an approval. (Per
