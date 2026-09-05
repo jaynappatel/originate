@@ -143,3 +143,11 @@ Annotated walkthrough: `docs/CONFIG-SCHEMA.md`. Shape:
 ```
 
 ### Why `criteria` is a small predicate DSL, not code
+
+Hard numeric gates (`field`/`op`/`value`) compile to one deterministic
+function; soft, qualitative signals (`judgmentSignals`) render into one
+prompt fragment for the scoring skill's holistic judgment. Both come from
+this **one** list, so there's nothing left to fall out of sync the way
+Topwater's three-way duplication can. This is deliberately the *only* place
+config becomes "logic" rather than data — everything else in the schema is
+inert configuration a template reads.
