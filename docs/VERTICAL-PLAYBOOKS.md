@@ -123,3 +123,25 @@ Stage A driver and CRM.
 
 The vertical that proves the platform must support running **only**
 stages A–E, with diligence off entirely.
+
+- **Entity:** prospect / account. **Verdicts:** typically none — output is a
+  ranked, enriched, sequenced list, not a pass/fail decision memo.
+- **Stage A (thesis):** an Ideal Customer Profile (ICP) definition —
+  firmographic and technographic criteria — approved by the client (this
+  agency's own customer) before any list-building spend.
+- **Stage B (discovery):** Apollo, ZoomInfo, or similar prospect databases —
+  volume closer to real estate than to VC (thousands of rows, not hundreds).
+- **Stage C (scoring):** ICP-fit score as the primary hard gate; intent-data
+  signals (hiring, funding, tech-stack changes) as judgment signals.
+- **Stage D (enrichment):** contact-level enrichment (email, direct dial,
+  verified title) for ICP-qualifying accounts only.
+- **Stage E (outreach):** a sales sequence draft (multi-touch), still
+  draft-only into whatever comms tool the agency uses.
+- **CRM:** Salesforce or HubSpot — check-before-contact and write-back both
+  matter here at least as much as in VC, since duplicate outreach across
+  campaigns is the exact failure this stage exists to prevent.
+- **Diligence:** `diligence.enabled: false`. No locked-folder document
+  review step runs at all; nothing in the config or generated skill set
+  references it. This is the vertical that forces the onboarding wizard and
+  the template generator to treat diligence as genuinely optional, not
+  "on but empty."
