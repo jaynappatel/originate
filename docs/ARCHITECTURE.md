@@ -254,3 +254,5 @@ company's sourcing/diligence data never leaves their own machine or their
 own account.
 
 ---
+
+## 9. Explicit scope boundary (this pass)
