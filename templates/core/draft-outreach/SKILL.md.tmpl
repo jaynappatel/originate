@@ -7,3 +7,12 @@ only ever a draft.
 ---
 
 ## Before anything — reuse check (Rule O4)
+
+Unit of reuse: the {{vocabulary.entity}}. Check
+`outputs/_ledgers/comms-drafts.json` (per
+`standards/OUTPUT-STANDARDS.md` Rule O1's ledger section) for every
+{{vocabulary.entity}} that already has a draft — an existing draft is
+copied forward byte for byte, never rewritten, unless the person explicitly
+asks for a redo. This ledger check is what makes reruns of this skill safe:
+without it, a rerun over the same batch would create a second draft for
+every {{vocabulary.entity}} already drafted.
