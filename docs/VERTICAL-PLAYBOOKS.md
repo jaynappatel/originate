@@ -12,3 +12,7 @@ Every playbook below is a starting point a company edits during onboarding
 ---
 
 ## 1. Venture Capital (reference vertical)
+
+**Config:** `templates/verticals/vc/config.starter.json` — Topwater Capital's
+own criteria, re-expressed in the new schema. This is the vertical every core
+template is validated against (§5 of `ARCHITECTURE.md`).
