@@ -43,3 +43,5 @@ separate project that generalizes the same ideas.
   declares, and the starting catalog.
 - **`docs/ONBOARDING-FLOW.md`** — the 8-step guided setup, including the
   Claude Code vs. Codex choice.
+
+## What's in this repo right now
