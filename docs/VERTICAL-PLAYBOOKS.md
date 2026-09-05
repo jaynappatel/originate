@@ -147,3 +147,6 @@ stages A–E, with diligence off entirely.
   "on but empty."
 
 ## 7. Insurance MGA (submission underwriting)
+
+The vertical that proves the verdict vocabulary can't be hardcoded to
+PROCEED/PASS, and that "discovery" doesn't have to mean open-market search.
