@@ -86,3 +86,5 @@ anywhere in the schema: there is no `commsSend`. A connector can declare
 `commsDraft`; sending is not a capability the config vocabulary can express,
 which is what makes "nothing sends itself" structural rather than a policy
 a config could accidentally turn on.
+
+## `diligence`
