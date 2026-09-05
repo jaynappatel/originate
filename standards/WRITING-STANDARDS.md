@@ -29,3 +29,9 @@ the content to an exhibit.
 **W3. 35-word ceiling.** No prose sentence runs over 35 words. Over the
 ceiling means tabular content is stuck in prose, or two claims are welded
 together — split them.
+
+**W4. Variety, and no spec echo.** No three consecutive sentences open with
+the same word or ride the same skeleton. A skill's own instructions name
+required content, never required phrasing — never reproduce a spec item's
+exact wording in the output, and a spec should never contain a quotable
+output sentence for the same reason.
