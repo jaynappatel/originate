@@ -2,9 +2,10 @@
   "name": "originate",
   "version": "0.1.0",
   "private": true,
-  "description": "Originate: configurable AI sourcing & diligence copilot. Design docs, config schema, and skill templates — no runtime yet, see cli/README.md.",
+  "description": "Originate: configurable AI sourcing & diligence copilot. Design docs, config schema, skill templates, and a local browser console for editing a tenant config and rendering its skills.",
   "scripts": {
     "validate:schema": "node -e \"JSON.parse(require('fs').readFileSync('schema/originate.config.schema.json','utf8')); console.log('schema is valid JSON')\"",
-    "validate:starters": "node -e \"['vc','recruiting','real-estate'].forEach(v => { JSON.parse(require('fs').readFileSync(`templates/verticals/${v}/config.starter.json`,'utf8')); console.log(v + ' starter config is valid JSON'); })\""
+    "validate:starters": "node -e \"['vc','recruiting','real-estate'].forEach(v => { JSON.parse(require('fs').readFileSync(`templates/verticals/${v}/config.starter.json`,'utf8')); console.log(v + ' starter config is valid JSON'); })\"",
+    "console": "python3 -m http.server 4173"
   }
 }

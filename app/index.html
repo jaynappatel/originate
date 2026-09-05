@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Originate Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">O</span>
+      <div>
+        <div class="brand-name">Originate Console</div>
+        <div class="brand-sub">Configure a tenant, then generate its skills</div>
+      </div>
+    </div>
+    <nav class="vertical-switcher" id="vertical-switcher">
+      <button data-vertical="vc" class="active">VC</button>
+      <button data-vertical="recruiting">Recruiting</button>
+      <button data-vertical="real-estate">Real Estate</button>
+      <button data-vertical="custom">Custom (blank)</button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>Org &amp; vocabulary</h2>
+        <label>Organization name
+          <input id="f-org-name" type="text" />
+        </label>
+        <label>Approver title
+          <input id="f-approver-title" type="text" />
+        </label>
+        <div class="field-row">
+          <label>Entity (singular)
+            <input id="f-entity" type="text" />
+          </label>
+          <label>Entity (plural)
+            <input id="f-entity-plural" type="text" />
+          </label>
+        </div>
+        <label>Verdicts (comma-separated)
+          <input id="f-verdicts" type="text" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Agent runtime</h2>
+        <div class="field-row">
+          <label>Pipeline execution
+            <select id="f-runtime-primary">
+              <option value="claude-code">Claude Code</option>
+              <option value="codex">Codex</option>
+            </select>
+          </label>
+          <label>Skill editing
+            <select id="f-runtime-editing">
+              <option value="claude-code">Claude Code</option>
+              <option value="codex">Codex</option>
+              <option value="both">Both</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Connectors</h2>
+        <div id="connector-groups"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Diligence</h2>
+        <label class="checkbox-label">
+          <input id="f-diligence-enabled" type="checkbox" />
+          Diligence pipeline enabled
+        </label>
+        <ul id="specialist-list" class="specialist-list"></ul>
+      </section>
+    </aside>
+
+    <main class="preview">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="config">originate.config.json</button>
+        <button class="tab-btn" data-tab="generate">Generate skill</button>
+      </div>
+
+      <div id="tab-config" class="tab-panel">
+        <div class="panel-header">
+          <span>Live config state</span>
+          <button id="copy-json-btn" class="ghost-btn">Copy JSON</button>
+        </div>
+        <textarea id="config-editor" spellcheck="false"></textarea>
+        <div class="editor-actions">
+          <button id="apply-json-btn">Apply edited JSON</button>
+          <span id="json-status"></span>
+        </div>
+      </div>
+
+      <div id="tab-generate" class="tab-panel" hidden>
+        <div class="panel-header generate-controls">
+          <label>Skill template
+            <select id="skill-select"></select>
+          </label>
+          <label id="specialist-picker-wrap" hidden>Specialist
+            <select id="specialist-select"></select>
+          </label>
+          <button id="generate-btn">Generate</button>
+        </div>
+        <pre id="generated-output" class="skill-output">Pick a skill template and click Generate.</pre>
+      </div>
+    </main>
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
