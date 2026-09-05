@@ -25,3 +25,7 @@ chains and slash chains never appear in prose.
 across 31 opportunities..."). A line that starts with a bare noun and a
 colon is a table row wearing prose clothing — write the sentence or move
 the content to an exhibit.
+
+**W3. 35-word ceiling.** No prose sentence runs over 35 words. Over the
+ceiling means tabular content is stuck in prose, or two claims are welded
+together — split them.
