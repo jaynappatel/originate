@@ -7,3 +7,13 @@ Generalizes Topwater's `/check-affinity-contact` and
 ---
 
 ## What this skill does
+
+For each {{vocabulary.entity}} about to receive outreach, query every
+configured `crm` connector with `crmRead` capability
+({{connectors.crm}}) for prior contact or interaction history. This is a
+**live read**, not a cached one — per
+`standards/OUTPUT-STANDARDS.md` Rule O4's own exception list, a CRM history
+check is one of the two skill types whose entire output is a live read of
+an external system, where a day-old answer is a different answer. Reuse
+only within the same calendar day, and state the time of the read whenever
+this skill's output is reused within that window.
