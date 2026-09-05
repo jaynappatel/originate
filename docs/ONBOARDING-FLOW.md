@@ -17,3 +17,6 @@ A company can pick the closest archetype and diverge from it freely in step
 3.
 
 ## 2. Choose your agent runtime(s)
+
+Two separate choices — see `docs/ARCHITECTURE.md` §6 for why conflating
+them is the likely mistake:
