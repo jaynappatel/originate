@@ -47,3 +47,5 @@ tenant's vertical overlay:
    `--force` or a merge, the same "never silently clobber in-progress work"
    principle that governs the destructive-action guidance for any agent
    operating on a user's files.
+
+### `originate validate`
