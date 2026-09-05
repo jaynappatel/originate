@@ -57,3 +57,8 @@ term. A notice deadline equals expiry minus the notice period — the
 deadline is when action is due, not when a window opens. Recompute every
 date from the source instrument; when a register disagrees with the
 instrument, the instrument wins and the conflict is flagged.
+
+**G9 — Decompose blended averages.** When a blended average or headline
+rate has row-level data available, decompose it and report the distribution
+(outliers, share below threshold, ex-outlier figure) — lead with the
+distribution when it tells a different story than the headline.
