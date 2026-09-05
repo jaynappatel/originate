@@ -165,3 +165,12 @@ functions) specifically so it doesn't reopen the scope that was rejected.
 ---
 
 ## 5. Skill templates
+
+The `.claude/skills/<name>/SKILL.md` format is kept as-is (it's the proven,
+Claude Code–native shape). Each is authored as a **template** —
+`SKILL.md.tmpl` — with placeholders resolved from `originate.config.json`
+(`{{org.name}}`, `{{vocabulary.entity}}`, `{{criteria.tiers}}`, etc.). A
+vertical overlay is thin: a vocabulary swap, a starter `criteria` block, and
+an *additive* list of extra skills — VC/PE adds `cim-extract`; recruiting
+could add a reference-check skill. Overlays add; they don't have to override
+everything.
