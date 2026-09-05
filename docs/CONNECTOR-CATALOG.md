@@ -65,3 +65,15 @@ treating them as second-class:
 | `costar` | discovery, enrichment | Real estate | Listings + comps/zoning/tax enrichment from one source. |
 
 ### A note on the recruiting vertical's discovery connectors
+
+Topwater's widget already has ATS collectors —
+`widget/src/atsGreenhouseCollector.ts`, `atsLeverCollector.ts`,
+`atsAshbyCollector.ts`, `atsLoxoCollector.ts`, `atsCareerspageCollector.ts`,
+plus `atsDetect.ts` to identify which ATS a target uses. These map onto
+Originate's `discovery` connector role directly and near-verbatim for the
+recruiting vertical — they were built for a different purpose in Topwater
+(finding hiring signals as a scoring input, not candidate sourcing), but the
+underlying connector code is exactly "pull a list of people/postings from
+this ATS," which is the recruiting vertical's Stage B. Worth flagging as a
+concrete, low-risk port when the execution engine is actually built,
+because the code already exists and is already tested.
