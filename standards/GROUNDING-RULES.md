@@ -14,3 +14,9 @@ any restrictive clause, do not pattern-match the opening words — classify
 its net effect (who may do the thing, to whom, with or without consent,
 under what carve-outs), state the net effect, then quote the full operative
 language.
+
+**G2 — Direction words come from computation.** Before writing recovered,
+improved, declined, grew, compressed, expanded, accelerated, or stabilized,
+compute the delta in code from the two underlying values and let the sign
+choose the word. Ranges describing "consistent" performance must include
+every period in the claimed span.
