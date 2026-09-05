@@ -81,3 +81,8 @@ filenames.
 **W13. No typographic emphasis in body prose.** No bold or italics inside
 team-facing prose bodies. Emphasis comes from sentence position — first and
 last slots carry the weight. Tables may bold headers.
+
+**W14. Document furniture.** Every output uses a title line
+("# [Entity] — [Output name]"), a metadata block with consistent labels
+(**Date:**, **Agent:**, **Sources/Folder read:**), and one section-labeling
+scheme per document.
