@@ -14,3 +14,5 @@ Each connector directory under `templates/connectors/<id>/` holds:
   limits, caching rules, what "5 fields only, never more" means for this
   particular source, etc.) — the connector-specific analog of a Topwater
   skill's own inline instructions today.
+
+## The capability contract
