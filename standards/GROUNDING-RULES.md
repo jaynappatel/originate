@@ -20,3 +20,11 @@ improved, declined, grew, compressed, expanded, accelerated, or stabilized,
 compute the delta in code from the two underlying values and let the sign
 choose the word. Ranges describing "consistent" performance must include
 every period in the claimed span.
+
+**G3 — Compute once, reuse everywhere.** Every derived number is computed
+once in code, stored with its inputs, and reused verbatim wherever it
+appears. Every stated total must be shown rebuilding from its named
+components in the output; if the components don't sum, show the gap rather
+than rounding it away. Never mix incompatible bases (e.g. audited vs.
+unaudited, gross vs. net) in one subtraction without stating the basis of
+both operands.
