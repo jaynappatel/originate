@@ -63,3 +63,5 @@ the platform must not hardcode the verdict set. Full per-vertical detail is
 in `docs/VERTICAL-PLAYBOOKS.md`.
 
 ---
+
+## 3. What ports over unchanged
