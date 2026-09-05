@@ -83,3 +83,5 @@ recipient is confirmed explicitly before any draft-creation tool is called —
 state exactly what will be attached and to which account before creating
 anything, and never let "email it" be read as "send it." If the user
 declines all three, do nothing beyond O2.
+
+## Rule O4 — Reuse the last run; do only what is new
