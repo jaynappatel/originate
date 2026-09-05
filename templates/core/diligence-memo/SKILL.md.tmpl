@@ -15,3 +15,24 @@ memo's own last run is what makes a memo rerun genuinely new work; an
 unchanged specialist set means nothing to rewrite.
 
 ## What this skill does
+
+1. Reads every available specialist output under
+   `diligence/[{{vocabulary.entity}}]/outputs/` — "available" means however
+   many of `diligence.specialists` actually completed; a memo with seven of
+   eight specialists' worth of input still produces a full memo, stating
+   plainly which one is missing and why, never silently proceeding as if
+   the missing one didn't exist and never refusing to produce a memo at
+   all over one gap.
+2. Synthesizes across specialists per `standards/WRITING-STANDARDS.md` Rule
+   W15 (quote an upstream phrase once, never twice — this memo's job is
+   synthesis, not assembly of upstream sentences) and Rule G10 (any
+   restated finding preserves the upstream specialist's exact scope,
+   direction, and tense — re-read that specialist's own field before
+   writing the sentence, never restate from memory).
+3. Ends with exactly one line, verbatim, drawn from
+   `vocabulary.verdicts` — no other value, no hedge word appended, no
+   verdict invented that isn't in that configured list. This is a
+   **mechanical check, not a stylistic one**: before the memo is considered
+   finished, verify in code that its final line is exactly one of the
+   configured verdict strings. A memo that fails this check is not
+   finished, regardless of how complete its prose looks.
