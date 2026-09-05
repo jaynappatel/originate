@@ -27,3 +27,13 @@ determined by `criteria`, `connectors`, `pipeline`, and `diligence` below.
 `custom` means "start blank, no overlay."
 
 ## `vocabulary`
+
+The two fields that most directly generalize the hardcoded "company" noun
+and the hardcoded PROCEED/PASS verdict set. `entity`/`entityPlural` get
+substituted into every template's prose. `verdicts` is an ordered list with
+no fixed length or fixed words — `docs/VERTICAL-PLAYBOOKS.md` #7 (insurance
+MGA) uses `["BIND", "DECLINE", "REFER"]`; VC uses four values including
+`PROCEED_WITH_GAPS`. The diligence-memo template enforces that its final
+line is exactly one of this list's values — enforced mechanically, the same
+way Topwater's memo enforces PROCEED/PASS/etc. today, just reading the list
+from config instead of a hardcoded string check.
