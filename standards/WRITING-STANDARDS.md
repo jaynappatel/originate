@@ -77,3 +77,7 @@ prose states current truth only.
 range style per document and keep it; replace "~" with "about" or
 "roughly"; write dates out in prose, ISO dates only in headers/tables/
 filenames.
+
+**W13. No typographic emphasis in body prose.** No bold or italics inside
+team-facing prose bodies. Emphasis comes from sentence position — first and
+last slots carry the weight. Tables may bold headers.
