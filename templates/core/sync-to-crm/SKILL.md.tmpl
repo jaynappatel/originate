@@ -24,3 +24,8 @@ half-mapped CRM write is worse than no write: it produces records a human
 will trust that don't actually reflect the tenant's real schema.
 
 ## Idempotency
+
+Never create a duplicate CRM record for a {{vocabulary.entity}} already
+written back by a prior run of this skill — check for an existing record
+(by whatever identifier the CRM connector uses) before writing, and update
+rather than duplicate.
