@@ -15,3 +15,11 @@ depends on this skill's own run folder existing before scoring starts).
 
 ## Checkpointing (this is the batch-level layer named in
 `docs/ARCHITECTURE.md` §3 — implement it here, not elsewhere)
+
+Score in small batches. As each batch finishes, save it to its own
+checkpoint file immediately — never held until the whole run completes. If
+a run is interrupted and picked back up, the next attempt reads whatever
+checkpoint files already exist, treats those {{vocabulary.entityPlural}} as
+done, and only re-does the batch that was actually still in progress. This
+is what makes a large run (hundreds of {{vocabulary.entityPlural}}) safe to
+interrupt without losing finished work.
