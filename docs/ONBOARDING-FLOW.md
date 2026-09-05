@@ -76,3 +76,5 @@ the tenant's real `.claude/skills/*/SKILL.md`, and scaffold the tenant's
 workspace (`sourcing/`, `diligence/` if enabled, `docs/`, `outputs/`)
 matching Topwater's proven O1-O5 output-standards layout (see
 `standards/OUTPUT-STANDARDS.md`).
+
+## 6. Dry-run
