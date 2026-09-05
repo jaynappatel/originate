@@ -8,3 +8,11 @@ call transcript all need the same citation and confidence discipline a data
 room's financials do. Load this alongside
 `standards/GROUNDING-RULES.md` (the generalized G1-G11) before producing any
 diligence output.
+
+The vertical-specific layer that Topwater's original file bundled in with
+these six rules — the thesis-component labels, the fit scorecard, the
+re-rate thesis summary — is **not** part of the shared standard. Those are
+VC/PE-specific analytical frameworks and belong in a vertical overlay's own
+`diligence-memo` addendum, not in the rules every diligence skill in every
+vertical must follow. See `templates/verticals/vc/` for how VC restates
+them.
