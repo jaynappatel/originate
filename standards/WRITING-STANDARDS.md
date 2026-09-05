@@ -70,3 +70,5 @@ explicitly.
 **W11. Process notes out of the prose.** Corrections to prior runs and
 extraction-history notes live in a header block, not in body prose. Body
 prose states current truth only.
+
+## Formatting rules
